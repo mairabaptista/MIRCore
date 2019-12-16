@@ -10,7 +10,8 @@ intrpt, bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, sai
 		  ALUMUX, inputMUX, branch, sinalBranch, jMUX, 
 		  jrMUX, displayFlag, hlt, jal,
 		  //a partir daqui, adicionados
-		  write_flag, write_os, mux_hd_control, lcd_trd_msg;
+		  write_flag, write_os, mux_hd_control, lcd_trd_msg,
+		  proc_swap, chng_wrt_shft, chng_rd_shft;
 	
 	wire MODE; //user/kernel mode flag
 	
@@ -43,8 +44,13 @@ intrpt, bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, sai
 	
 	wire [31:0] shift_amount;
 	
+	wire [31:0] exec_proc;
+	
+	wire decoded_exec_proc, wrt_shft_enabler, rd_shft_enabler;
+	
 	output wire lcd_on,lcd_blon,lcd_rw,lcd_en,lcd_rs;
 	output wire [7:0] lcd_data;
+	
 	
 	DeBounce db(.clk(clock50M), 
 					 .n_reset(1'b1), 
@@ -62,13 +68,34 @@ intrpt, bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, sai
 											  .opcode(selected_instruction[31:26]), 
 											  .intrpt(intrpt));
 	
+	PROCESS_KEEPER keeper(.proc_swap(proc_swap), 
+								 .clock(clock), 
+								 .intrpt(1'b0), 
+								 .new_proc_num(rdata1), 
+								 .exec_proc(exec_proc));
+	
+	PROCESS_DECODE pdecoder(.process_in(exec_proc), 
+									.process_decoded(decoded_exec_proc));
+									
+									
+	ADDRESS_SET address_set(.chng_wrt_shft(chng_wrt_shft), 
+									.chng_rd_shft(chng_rd_shft), 
+									.clock(clock), 
+									.wrt_shft_enabler(wrt_shft_enabler), 
+									.rd_shft_enabler(rd_shft_enabler));
+
+	
+	
 	pc PC(.clk(clock), 
 			.reset(reset), 
 			.hlt(hlt), 
 			.address(entradaPC), 
 			//.newAddress(saidaPC),
 			.outPC(outPC),
-			.bios_reset(bios_reset));	
+			.bios_reset(bios_reset), 
+			.proc_num(), //adicionado
+			.only_proc_pc() //adicionado
+			);	
 	
 	HD hd(.clk_auto(clock50M), 
 			.clk(clock), 
@@ -91,7 +118,7 @@ intrpt, bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, sai
 								  .write_flag(write_flag), //adicionado
 								  .write_os(write_os), //adicionado
 								  .input_instr(rdata2), //adicionado
-								  .MODE(1'b0), //adicionado
+								  .MODE(decoded_exec_proc), //adicionado
 								  .read_address(rdata1) //adicionado
 								  );
 	
@@ -122,11 +149,13 @@ intrpt, bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, sai
 							  .reset(reset),
 							  .jal(jal), 
 							  .bios_select(bios_select), //adicionado
-							  //.bios_reset(bios_reset), 
 							  .write_flag(write_flag), //adicionado
 							  .write_os(write_os), //adicionado
 							  .mux_hd_control(mux_hd_control), //adicionado
-							  .lcd_trd_msg(lcd_trd_msg) //adicionado
+							  .lcd_trd_msg(lcd_trd_msg), //adicionado
+							  .proc_swap(proc_swap) ,  //adicionado
+							  .chng_wrt_shft(chng_wrt_shft), //adicionado
+							  .chng_rd_shft(chng_rd_shft) //adicionado
 							  ); 
 	
 	MUX_INPUT input_mux(.entrada1(selected_instruction[15:0]), 
@@ -157,7 +186,10 @@ intrpt, bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, sai
 					  .clk(clock), 
 					  .regWrite(regWrite),
 					  .PC(outPC),
-					  .jal(jal));					  
+					  .jal(jal),
+					  .rd_shft_enabler(rd_shft_enabler), //adiconado
+					  .wrt_shft_enabler(wrt_shft_enabler) //adiconado
+					  );					  
 	
 	
 	SE_26_32 estensor_26_32(.sinal_entrada(selected_instruction[25:0]), 
@@ -176,8 +208,8 @@ intrpt, bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, sai
 			  .sinalBranch(sinalBranch),
 			  .branch(branch));	
 			  
-	MEM_SHIFTER mem_shifter(.proc_index(2), 
-									.shift_amount(shift_amount)
+	MEM_SHIFTER mem_shifter(.proc_index(2), //adicionado 
+									.shift_amount(shift_amount) //adicionado
 									);
 
 	DataMem dmem(.writeDataIN(rdata2),  

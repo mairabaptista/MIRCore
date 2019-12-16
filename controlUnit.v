@@ -1,7 +1,7 @@
 module controlUnit(rdy,opcode, ALUMUX, 
 						regWrite, regDest, ALUControl, memWrite, 
 						memRead, memMUX, inputMUX, branch, jMUX, jrMUX, displayFlag, hlt, reset, jal, bios_select,
-						write_flag, write_os, mux_hd_control, lcd_trd_msg);
+						write_flag, write_os, mux_hd_control, lcd_trd_msg, proc_swap, chng_wrt_shft, chng_rd_shft);
 	
 	input rdy, reset;
 	input [5:0]opcode;
@@ -22,7 +22,10 @@ module controlUnit(rdy,opcode, ALUMUX,
 	output reg write_flag; 			//flag de escrita na memoria de instrucoes
 	output reg write_os; 			//flag de escrita na instmem a regiao do so
 	output reg mux_hd_control; //flag de escolha da origem do dado
-	output reg lcd_trd_msg;
+	output reg lcd_trd_msg;		//flag de trocar a mensagem do lcd
+	output reg proc_swap;		//flag de troca de processo
+	output reg chng_wrt_shft;	//flag de mudanca de shift de escrita
+	output reg chng_rd_shft; //flag de mudanca de shift de leitura
 	
 	always @(*)
 		begin
@@ -46,6 +49,9 @@ module controlUnit(rdy,opcode, ALUMUX,
 			write_os = 1'b0;
 			mux_hd_control = 1'b0;
 			lcd_trd_msg = 1'b0;
+			proc_swap = 1'b0;
+			chng_wrt_shft = 1'b0; 
+			chng_rd_shft = 1'b0;
 			
 			case(opcode)
 					6'b000000: //soma
@@ -266,6 +272,18 @@ module controlUnit(rdy,opcode, ALUMUX,
 							regDest = 1'b0;
 							regWrite = 1'b0;
 							lcd_trd_msg = 1'b1;
+						end
+					6'b111000: //chwrt
+						begin
+							regDest = 1'b0;
+							regWrite = 1'b0;
+							chng_wrt_shft = 1'b1;
+						end
+					6'b111001: //chrd
+						begin
+							regDest = 1'b0;
+							regWrite = 1'b0;
+							chng_rd_shft = 1'b1;
 						end
 					
 					default:
