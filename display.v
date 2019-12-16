@@ -27,6 +27,9 @@ saidaDisplay = 7'b1111111;
 4'b1001 :    		//Hexadecimal 9
 saidaDisplay = 7'b1111011 ;
 
+default:
+	saidaDisplay = 7'b1111110;
+
 endcase
  assign sDisplay = ~saidaDisplay;
 endmodule

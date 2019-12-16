@@ -1,0 +1,28 @@
+module MUX_BIOS(mux_select, clk, rst, hlt,input_data_1, input_data_2, mux_output);
+
+	parameter DATA_WIDTH = 32;
+	input mux_select, clk, rst, hlt;
+	input [(DATA_WIDTH -1):0] input_data_1, input_data_2;
+	output [(DATA_WIDTH -1):0] mux_output;	
+	
+	reg state;
+
+	always @ ( posedge clk ) 	
+	begin		
+		case( state )
+			1'b0:
+			begin
+				if( mux_select )
+					state <= 1'b1;
+			end
+			1'b1: 
+			begin
+				if( rst )
+					state <= 1'b0;
+			end
+		endcase
+	end
+	
+	assign mux_output = (state == 1'b1) ? input_data_2 : input_data_1;
+	
+endmodule

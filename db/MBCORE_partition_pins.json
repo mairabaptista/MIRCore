@@ -1,0 +1,665 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "unidade[0]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade[1]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade[2]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade[3]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade[4]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade[5]",
+					"strict" : false
+				},
+				{
+					"name" : "unidade[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dezena[6]",
+					"strict" : false
+				},
+				{
+					"name" : "centena[0]",
+					"strict" : false
+				},
+				{
+					"name" : "centena[1]",
+					"strict" : false
+				},
+				{
+					"name" : "centena[2]",
+					"strict" : false
+				},
+				{
+					"name" : "centena[3]",
+					"strict" : false
+				},
+				{
+					"name" : "centena[4]",
+					"strict" : false
+				},
+				{
+					"name" : "centena[5]",
+					"strict" : false
+				},
+				{
+					"name" : "centena[6]",
+					"strict" : false
+				},
+				{
+					"name" : "mil[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mil[1]",
+					"strict" : false
+				},
+				{
+					"name" : "mil[2]",
+					"strict" : false
+				},
+				{
+					"name" : "mil[3]",
+					"strict" : false
+				},
+				{
+					"name" : "mil[4]",
+					"strict" : false
+				},
+				{
+					"name" : "mil[5]",
+					"strict" : false
+				},
+				{
+					"name" : "mil[6]",
+					"strict" : false
+				},
+				{
+					"name" : "milhao[0]",
+					"strict" : false
+				},
+				{
+					"name" : "milhao[1]",
+					"strict" : false
+				},
+				{
+					"name" : "milhao[2]",
+					"strict" : false
+				},
+				{
+					"name" : "milhao[3]",
+					"strict" : false
+				},
+				{
+					"name" : "milhao[4]",
+					"strict" : false
+				},
+				{
+					"name" : "milhao[5]",
+					"strict" : false
+				},
+				{
+					"name" : "milhao[6]",
+					"strict" : false
+				},
+				{
+					"name" : "bilhao[0]",
+					"strict" : false
+				},
+				{
+					"name" : "bilhao[1]",
+					"strict" : false
+				},
+				{
+					"name" : "bilhao[2]",
+					"strict" : false
+				},
+				{
+					"name" : "bilhao[3]",
+					"strict" : false
+				},
+				{
+					"name" : "bilhao[4]",
+					"strict" : false
+				},
+				{
+					"name" : "bilhao[5]",
+					"strict" : false
+				},
+				{
+					"name" : "bilhao[6]",
+					"strict" : false
+				},
+				{
+					"name" : "trilhao[0]",
+					"strict" : false
+				},
+				{
+					"name" : "trilhao[1]",
+					"strict" : false
+				},
+				{
+					"name" : "trilhao[2]",
+					"strict" : false
+				},
+				{
+					"name" : "trilhao[3]",
+					"strict" : false
+				},
+				{
+					"name" : "trilhao[4]",
+					"strict" : false
+				},
+				{
+					"name" : "trilhao[5]",
+					"strict" : false
+				},
+				{
+					"name" : "trilhao[6]",
+					"strict" : false
+				},
+				{
+					"name" : "quatrilhao[0]",
+					"strict" : false
+				},
+				{
+					"name" : "quatrilhao[1]",
+					"strict" : false
+				},
+				{
+					"name" : "quatrilhao[2]",
+					"strict" : false
+				},
+				{
+					"name" : "quatrilhao[3]",
+					"strict" : false
+				},
+				{
+					"name" : "quatrilhao[4]",
+					"strict" : false
+				},
+				{
+					"name" : "quatrilhao[5]",
+					"strict" : false
+				},
+				{
+					"name" : "quatrilhao[6]",
+					"strict" : false
+				},
+				{
+					"name" : "outPC[0]",
+					"strict" : false
+				},
+				{
+					"name" : "outPC[1]",
+					"strict" : false
+				},
+				{
+					"name" : "outPC[2]",
+					"strict" : false
+				},
+				{
+					"name" : "outPC[3]",
+					"strict" : false
+				},
+				{
+					"name" : "outPC[4]",
+					"strict" : false
+				},
+				{
+					"name" : "outPC[5]",
+					"strict" : false
+				},
+				{
+					"name" : "outPC[6]",
+					"strict" : false
+				},
+				{
+					"name" : "outPC[7]",
+					"strict" : false
+				},
+				{
+					"name" : "outPC[8]",
+					"strict" : false
+				},
+				{
+					"name" : "outPC[9]",
+					"strict" : false
+				},
+				{
+					"name" : "intrpt",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[0]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[1]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[2]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[3]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[4]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[5]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[6]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[7]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[8]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[9]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[10]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[11]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[12]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[13]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[14]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[15]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[16]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[17]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[18]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[19]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[20]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[21]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[22]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[23]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[24]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[25]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[26]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[27]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[28]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[29]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[30]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_output[31]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[16]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[17]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[18]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[19]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[20]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[21]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[22]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[23]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[24]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[25]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[26]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[27]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[28]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[29]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[30]",
+					"strict" : false
+				},
+				{
+					"name" : "Instruction[31]",
+					"strict" : false
+				},
+				{
+					"name" : "stateOut",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "bios_select",
+					"strict" : false
+				},
+				{
+					"name" : "bios_reset",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_en",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_rs",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clock50M",
+					"strict" : false
+				},
+				{
+					"name" : "switches[15]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[14]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[13]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[12]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[11]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[10]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[9]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[8]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[7]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[6]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[5]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[4]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[3]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[2]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[1]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[0]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clk_button",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

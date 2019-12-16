@@ -1,12 +1,13 @@
-module controlUnit(clk, rdy,opcode, ALUMUX, 
+module controlUnit(rdy,opcode, ALUMUX, 
 						regWrite, regDest, ALUControl, memWrite, 
-						memRead, memMUX, inputMUX, branch, jMUX, jrMUX, displayFlag, hlt, reset);
+						memRead, memMUX, inputMUX, branch, jMUX, jrMUX, displayFlag, hlt, reset, jal, bios_select,
+						write_flag, write_os, mux_hd_control, lcd_trd_msg);
 	
-	input clk, rdy, reset;
+	input rdy, reset;
 	input [5:0]opcode;
 	output reg hlt;				//flags do pc
 	output reg branch;				//controle de branch
-	output reg jMUX, jrMUX; 		//controle de jumps
+	output reg jMUX, jrMUX, jal; 		//controle de jumps
 	output reg regDest;				//(regdst) mux antes do banco reg
 	output reg regWrite; 			//controle de escrita 
 	output reg ALUMUX;				//mux de antes da ALU
@@ -16,8 +17,14 @@ module controlUnit(clk, rdy,opcode, ALUMUX,
 	output reg memMUX;				//MUX depois da DataMem
 	output reg inputMUX;
 	output reg displayFlag;	
+	output reg bios_select;
+	//output reg bios_reset;
+	output reg write_flag; 			//flag de escrita na memoria de instrucoes
+	output reg write_os; 			//flag de escrita na instmem a regiao do so
+	output reg mux_hd_control; //flag de escolha da origem do dado
+	output reg lcd_trd_msg;
 	
-	always @(opcode)
+	always @(*)
 		begin
 			//os valores base seguem os sinais de controle de uma instrução de tipo R
 			regDest = 1'b1;
@@ -32,8 +39,15 @@ module controlUnit(clk, rdy,opcode, ALUMUX,
 			jMUX = 1'b0;
 			inputMUX = 1'b0;
 			displayFlag = 1'b0;
-			//jalMUX = 1'b0;		
-			case(opcode[5:0])
+			jal = 1'b0;	
+			bios_select = 1'b0;
+			//bios_reset = 1'b0;
+			write_flag = 1'b0;
+			write_os = 1'b0;
+			mux_hd_control = 1'b0;
+			lcd_trd_msg = 1'b0;
+			
+			case(opcode)
 					6'b000000: //soma
 						begin
 						end
@@ -90,13 +104,21 @@ module controlUnit(clk, rdy,opcode, ALUMUX,
 							ALUControl = 6'b001001;
 						end
 
-					6'b001110: 	//ld
+					6'b001110: 	//lw
 						begin
 							regDest = 1'b0;
 							ALUMUX = 1'b1;
 							memMUX = 1'b1;					
 							//memRead = 1'b1;		
 							//ALUControl = 6'b001110;
+							ALUControl = 6'b000000;
+						end
+					6'b100110:	//la
+						begin
+							regDest = 1'b0;
+							ALUMUX = 1'b1;
+							memMUX = 1'b0;
+							memRead = 1'b1;
 							ALUControl = 6'b000000;
 						end
 					6'b001111:	//li
@@ -106,7 +128,7 @@ module controlUnit(clk, rdy,opcode, ALUMUX,
 							memMUX = 1'b0;
 							memRead = 1'b1;
 							//ALUControl = 6'b001111;
-							ALUControl = 6'b000000;
+							ALUControl = 6'b001111;
 						end
 					6'b010000:	//sw
 						begin
@@ -135,7 +157,7 @@ module controlUnit(clk, rdy,opcode, ALUMUX,
 							regWrite = 1'b0;
 							ALUControl = 6'b010101;
 						end
-					6'b010111:	//slt
+					6'b010111:	//sget
 						begin
 							ALUControl = 6'b010111;
 							ALUMUX = 1'b1;		
@@ -152,6 +174,14 @@ module controlUnit(clk, rdy,opcode, ALUMUX,
 						begin
 							ALUControl = 6'b100010;
 						end
+					6'b110000:	//set less than
+						begin
+							ALUControl = 6'b110000;
+						end
+					6'b110001:	//set less equal than
+						begin
+							ALUControl = 6'b110001;
+						end
 					6'b011010: 	//jump
 						begin
 							regWrite = 1'b0;	
@@ -164,6 +194,13 @@ module controlUnit(clk, rdy,opcode, ALUMUX,
 							jrMUX = 1'b1;		
 							ALUControl = 6'b011001;
 						end
+					6'b100001:	//jal
+						begin
+							regWrite = 1'b0;	
+							jMUX = 1'b1;							
+							ALUControl = 6'b000000;
+							jal = 1'b1;
+						end
 					6'b011011: 	//move	
 						begin
 							ALUControl = 6'b011011;
@@ -175,6 +212,10 @@ module controlUnit(clk, rdy,opcode, ALUMUX,
 							displayFlag = 1'b1;
 							regDest = 1'b0;
 							regWrite = 1'b0;
+							if(rdy)	
+								hlt = 1'b1;
+							else
+								hlt = 1'b0;							
 						end
 					6'b100101:	//input
 						begin
@@ -197,6 +238,38 @@ module controlUnit(clk, rdy,opcode, ALUMUX,
 					6'b011101: 	//HALT
 						begin
 							hlt = 1'b1;
+							regDest = 1'b0;
+							regWrite = 1'b0;
+						end
+					6'b111110: 	//bios_select
+						begin
+							bios_select = 1'b1;
+							regDest = 1'b0;
+							regWrite = 1'b0;
+							//bios_reset = 1'b1;
+						end
+					//SO
+					6'b110010: //lhd
+						begin
+							regDest = 1'b0;
+							mux_hd_control = 1'b1;
+						end
+					6'b110101: //smem
+						begin
+							regDest = 1'b0;
+							regWrite = 1'b0;
+							write_flag = 1'b1;
+							write_os = 1'b1;
+						end
+					6'b110110: //lcd
+						begin
+							regDest = 1'b0;
+							regWrite = 1'b0;
+							lcd_trd_msg = 1'b1;
+						end
+					
+					default:
+						begin
 							regDest = 1'b0;
 							regWrite = 1'b0;
 						end

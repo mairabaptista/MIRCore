@@ -1,141 +1,64 @@
-module InstructionMem(address, clk, instructionOut);
+module InstructionMem(
+	address, 
+	clk, 
+	instructionOut, 
+	clk_auto, 
+	write_flag, //adicionado, flag de escrita na memoria
+	write_os, //adicionado, flag de escrita no so
+	input_instr, //adicionado, instrucao de entrada, nao eh a do pc
+	MODE, //adicionado, KERNEL MODE = 0 / USER MODE = 1
+	read_address //adicionado, 
+	);
 
-	input [31:0]address;
-	input clk;
-	output [31:0]instructionOut;
-	integer first  = 0;
+	parameter DATA_WIDTH = 32;
+	parameter PAGE_WIDTH = 10;
 	
-	reg [31:0] ROM[63:0];
+	//INPUTS
+	input [(DATA_WIDTH - 1):0] address;
+	input [(DATA_WIDTH - 1):0] read_address;
+	input [(DATA_WIDTH - 1):0] input_instr;
+	input clk, clk_auto, write_flag, write_os, MODE;
+	
+	//OUTPUTS
+	output [(DATA_WIDTH - 1):0]instructionOut;
+	
+	reg [(DATA_WIDTH - 1):0] ROM_OS[2**(PAGE_WIDTH - 1):0];
+	reg [(DATA_WIDTH - 1):0] ROM_PROC[2**(PAGE_WIDTH - 1):0];
+	
+	reg [(DATA_WIDTH - 1):0] data_out_os; 
+	reg [(DATA_WIDTH - 1):0] data_out_proc;
+	
+		
 	always @(posedge clk)
 		begin
-			if(first == 0)
-				begin		
-					//FIBONACCI
-					ROM[0] = 32'b01110000000000000000000000000000;	//nop
-					ROM[1] = 32'b10010100000111110000000000000000;	//input reg31
-					ROM[2] = 32'b00111100001000100000000000000001;	//li reg2 = 1
-					ROM[3] = 32'b00111100001000110000000000000010;	//li reg3 = 2
-					ROM[4] = 32'b00111100001001000000000000000011;	//li reg4 = 3
-					ROM[5] = 32'b00111100001011010000000000000000;	//li reg13 = 0
-					ROM[6] = 32'b01000111111000100000000000010100;	//beq (if reg31 == reg2) jump to 20
-					ROM[7] = 32'b01000111111000110000000000010101;	//beq (if reg31 == reg3) jump to 21
-					ROM[8] = 32'b01000111111001000000000000010101;	//beq (if reg31 == reg4) jump to 21
-					ROM[9] = 32'b00110111111111110000000000000011;	//subi reg31 = reg31 - 3
-					ROM[10] = 32'b00110000000001010000000000000001;	//addi reg5 = reg1 + 1	
-					ROM[11] = 32'b00110000000001100000000000000001;	//addi reg6 = reg1 + 1
-					ROM[12] = 32'b01000111111011010000000000010110;	//beq (if reg31 == reg13) jump to 22
-					ROM[13] = 32'b00110001101011010000000000000001;	//addi reg13 = reg13 + 1
-					ROM[14] = 32'b00000000101001100011100000000000;	//add reg7 = reg5 + reg6
-					ROM[15] = 32'b01000010000001110000000000010000; //store reg7 in mem[16]
-					ROM[16] = 32'b00111010000010000000000000010000; //lw mem[16] in reg8
-					ROM[17] = 32'b01101100110001010000000000000000;	//move reg5 to reg6
-					ROM[18] = 32'b01101101000001100000000000000000;	//move reg6 to reg8
-					ROM[19] = 32'b01101000000000000000000000001100;	//jump to ROM[12]
-					ROM[20] = 32'b11111100000000000000000000000000;	//output reg1
-					ROM[21] = 32'b11111100000000100000000000000000;	//output reg2
-					ROM[22] = 32'b11111100000010000000000000000000;	//output reg8
-					ROM[23] = 32'b01110100000000000000000000000000;	//hlt
-					
-					//Fatorial					
-					/*ROM[0] = 32'b01110000000000000000000000000000;	//nop
-					ROM[1] = 32'b10010100000000010000000000000000;	//input reg1
-					ROM[2] = 32'b00000000001000000001000000000000;	//add reg2 = reg1 + reg0
-					ROM[3] = 32'b00110000000000110000000000000001;	//addi reg3 = reg0 + 1
-					ROM[4] =	32'b00110000000001010000000000000001;  //addi reg5 = reg0 + 1
-					ROM[5] = 32'b00011100010000110001100000000000;	//mult reg3 = reg3 * reg2
-					ROM[6] = 32'b00011100011001010010100000000000;  //mult reg5 = reg5 * reg3
-					ROM[7] = 32'b00100000101000110010100000000000; 	//div reg5 = reg5 / reg3
-					ROM[8] = 32'b00110100010000100000000000000001;	//subi reg2 = reg2 - 1
-					ROM[9] = 32'b10000000010000000010000000000000;	//sgt se reg2 > reg0, reg4 = 1, else reg4 = 0
-					ROM[10] = 32'b00010000100000000010000000000000;	//not reg4
-					ROM[11] = 32'b01110000000000000000000000000000;	//nop
-					ROM[12] = 32'b00010000100000000010000000000000;	//not reg4
-					ROM[13] = 32'b01000100000001000000000000001111;	//beq if(reg0 == reg4) jump to ROM[15] 
-					ROM[14] = 32'b01101000000000000000000000000101;	//jump tom ROM [5]
-					ROM[15] = 32'b01000000000000110000000000000001;	//store reg3 in MEM[1] 
-					ROM[16] = 32'b00111000000001010000000000000001;	//load MEM[1] in reg5
-					ROM[17] = 32'b11111100000001010000000000000000;	//out R5
-					ROM[18] = 32'b01110100000000000000000000000000;	//hlt*/
-
-					
-					
-					
-					//GCD
-					/*ROM[0] = 32'b01110000000000000000000000000000;	//nop
-					ROM[1] = 32'b10010100000000010000000000000000;	//input reg1
-					ROM[2] = 32'b01110000000000000000000000000000;	//nop
-					ROM[3] = 32'b10010100000000100000000000000000;	//input reg2
-					ROM[4] = 32'b00110000000001110000000000000001;	//addi reg 7 = reg0 + 1
-					ROM[5] = 32'b11110000010000000011000000000000;	//seq (se reg1 == 0, reg3 = 1, senão, reg3 = 0)
-					ROM[6] = 32'b01000100000000110000000000001001;	//beq reg3 == 0, jump to ROM[9]
-					ROM[7] = 32'b11111100000000110000000000000000;	//output reg3
-					ROM[8] = 32'b01110100000000000000000000000000;	//hlt
-					ROM[9] = 32'b11110000100000000100000000000000;	//seq (se reg2 == 0, reg4 = 1, senão, reg4 = 0)
-					ROM[10] = 32'b01000100000001000000000000001101;	//beq reg4 == 0, jump to ROM[13]
-					ROM[11] = 32'b11111100000001000000000000000000;	//output reg4
-					ROM[12] = 32'b01110100000000000000000000000000;	//hlt
-					ROM[13] = 32'b00111100000001010000000000000000;	//load reg5 = 0;	//shift
-					ROM[14] = 32'b00001100001000100011000000000000;	//or reg1 | reg2 = reg6
-					ROM[15] = 32'b00001000110001110011000000000000;	//and reg6 & reg7 = reg6
-					ROM[16] = 32'b01001000000001100000000000010101;	//bneq if(reg6 != 0), jump to ROM[21]
-					ROM[17] = 32'b00011000001000000000100000000001;	//shift right reg1 = reg1 >> 1
-					ROM[18] = 32'b00011000010000000001000000000001;	//shift right reg2 = reg2 >> 1
-					ROM[19] = 32'b00110000101001010000000000000001;	//addi reg5 = reg5 + 1
-					ROM[20] = 32'b01000100000001100000000000001110;	//beq if(reg6 == 0), jump to ROM[14];	//
-					ROM[21] = 32'b00001000001001110100100000000000;	//and reg1 & reg7 = reg9
-					ROM[22] = 32'b01001000000010010000000000011001;	//bneq if(reg9 != 0) jump to ROM[25]
-					ROM[23] = 32'b00011000001000000000100000000001;	//shift right reg1 = reg1 >> 1
-					ROM[24] = 32'b01101000000000000000000000010101;	//jump to ROM[21]
-					ROM[25] = 32'b00001000010001110100000000000000;	//and reg2 & reg7 = reg8
-					ROM[26] = 32'b01001000000010000000000000011101;	//bneq if(reg8 != 0) jump to ROM[29]
-					ROM[27] = 32'b00011000010000000001000000000001;	//shift right reg2 = reg2 >> 1
-					ROM[28] = 32'b01101000000000000000000000011001;	//jump to ROM[25]
-					ROM[29] = 32'b01001100010000010000000000100001;	//bgt reg2 > reg1 jump to ROM[33]
-					ROM[30] = 32'b00110000010010110000000000000000;	//addi reg11 = reg2 
-					ROM[31] = 32'b00110000001000100000000000000000;	//addi reg2 = reg1
-					ROM[32] = 32'b00110001011000010000000000000000;	//addi reg1 = reg11
-					ROM[33] = 32'b00000100010000010001000000000000;	//sub reg2 = reg2 - reg1
-					ROM[34] = 32'b01001000010000000000000000011001;	//bneq if(reg2 != reg0) jump to ROM[25] 
-					ROM[35] = 32'b01000100000001010000000000100111;	//beq if(reg5 == 0) jump to ROM[39]
-					ROM[36] = 32'b00010100001000000000100000000001;	//shift left reg1 = reg1 << 1	
-					ROM[37] = 32'b00110100101001010000000000000001;	//subi reg5 = reg5 - 1
-					ROM[38] = 32'b01101000000000000000000000100011;	//jump to ROM[35]
-					ROM[39] = 32'b11111100000000010000000000000000;	//output reg1
-					ROM[40] = 32'b01110100000000000000000000000000;	//hlt*/
-					
-					
-					//Ano bissexto
-					/*ROM[0] = 32'b01110000000000000000000000000000;	 //nop
-					ROM[1] = 32'b10010100000000010000000000000000;   //input reg1 = ano
-					ROM[2] = 32'b00111100000010100000000000000001;   //load imediato reg10 = 1
-					ROM[3] = 32'b00111100000000100000000000000100;   //load imediato reg2 = 4
-					ROM[4] = 32'b00111100000000110000000001100100;   //load imediato reg3 = 100
-					ROM[5] = 32'b00111100000001000000000110010000;   //load imediato reg4 = 400
-					ROM[6] = 32'b00100100001000100010100000000000;   //modulo reg5 = reg1 % reg2 (ano % 4)
-					ROM[7] = 32'b00100100001000110011000000000000;   //modulo reg6 = reg1 % reg3 (ano % 100)
-					ROM[8] = 32'b00100100001001000011100000000000;   //modulo reg7 = reg1 % reg4 (ano % 400)
-					ROM[9] = 32'b10001000101000000010100000000000;   //sdiff se reg5 != reg0, reg5 = 1, seão reg5 = 0
-					ROM[10] = 32'b01001000000001010000000000010110;	 //bneq reg5 != 0, jump to ROM[não é bissexto]
-					ROM[11] = 32'b00101100110000000011000000000000;  //xor reg6 = reg6 ^ reg0
-					ROM[12] = 32'b01000100000001100000000000010110;	 //beq reg6 == 0, jump to ROM[não é bissexto]
-					ROM[13] = 32'b00001000101001100100000000000000;  //reg8 = reg5 && reg6;
-					ROM[14] = 32'b10001000111000000100100000000000;  //sdiff se reg7 != reg0, reg9 = 1, seão reg9 = 0
-					//ROM[15] = 32'b01001000000010010000000000010110;  //bneq reg9 != 0, jump to ROM[não é bissexto]
-					ROM[15] = 32'b01110000000000000000000000000000;	 //nop
-					ROM[16] = 32'b00001101000010010100000000000000;  //or reg8 = reg8 || reg9 
-					ROM[17] = 32'b01000100000001100000000000010110;	 //beq reg8 == 0, jump to ROM[não é bissexto]
-					ROM[18] = 32'b00111100000010110000000000010100;  //load imediato reg11 = 20
-					ROM[19] = 32'b01100101011000000000000000000000;  //jr to ROM[reg11]
-					ROM[20] = 32'b11111100000010100000000000000000;	 //output reg10
-					ROM[21] = 32'b01110100000000000000000000000000;	 //hlt
-					ROM[22] = 32'b11111100000000000000000000000000;	 //output reg0
-					ROM[23] = 32'b01110100000000000000000000000000;	 //hlt*/
-					first <= 1;
-				end
-			
+			if(write_flag)
+				begin
+					if (write_os)
+						ROM_OS[read_address] <= input_instr;
+					else
+						ROM_PROC[read_address] <= input_instr;
+				end			
 		end
-		
-	assign instructionOut = ROM[address];
+	
+	always @(posedge clk_auto)
+		begin
+			data_out_os <= ROM_OS[address];
+			data_out_proc <= ROM_PROC[address];
+		end
+
+	assign instructionOut = (MODE == 1'b0) ? data_out_os : data_out_proc;
 	
 endmodule
 
+/*
+ROM[0] <= 32'b01110000000000000000000000000000;	//nop
+ROM[1] <= 32'b10010100000111100000000000000000;	//input reg30
+ROM[2] <= 32'b11111100000111100000000000000000;	//output reg30
+ROM[3] <= 32'b10000100000000000000000000000111;	//jal 7
+ROM[4] <= 32'b11111100000111100000000000000000;	//output reg30
+ROM[5] <= 32'b11111100000111110000000000000000;	//output reg31
+ROM[6] <= 32'b01110100000000000000000000000000;	//hlt
+ROM[7] <= 32'b00111100001000100000000000000001;	//li reg2 = 1
+ROM[8] <= 32'b11111100000000100000000000000000;	//output reg2
+ROM[9] <= 32'b01100111111000000000000000000000;  //jr to ROM[reg31]
+ROM[10] <= 32'b01110100000000000000000000000000;	//hlt */

@@ -1,0 +1,37 @@
+module HD(clk_read, clk_write, write_flag, track_line, proc_num, input_data, hd_output) ;
+
+	parameter DATA_WIDTH = 32, 
+	parameter ADDR_WIDTH = 15, 
+	parameter MAX_PROC_NUM = 16, 
+	parameter REGION = (2**ADDR_WIDTH)/MAX_PROC_NUM // 2048
+	
+	input clk_read, clk_write, write_flag,
+	input [(ADDR_WIDTH-1):0] track_line,
+	input [(MAX_PROC_NUM-1):0] proc_num,
+	input [(DATA_WIDTH-1):0] input_data, 
+	output reg [(DATA_WIDTH-1):0] hd_output
+	
+	reg[(DATA_WIDTH-1):0] hd[(2**(ADDR_WIDTH))-1:0];
+	
+	initial
+	begin
+		//prog 0 - OS: stack = 0, mem_loc = 0
+		hd[0] <= 32'b010000_00000_11110_0000000000000000; // $sp = 0
+		
+	
+	end
+	
+	always @ ( posedge clk_write )
+	begin
+		if( write_flag )
+			hd[ REGION * proc_num + track_line ] <= input_data;
+	end
+	
+	always @ ( posedge clk_read )
+	begin
+		hd_output <= hd[ REGION * proc_num + track_line ];
+	end
+
+endmodule 
+
+	
