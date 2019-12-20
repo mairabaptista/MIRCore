@@ -8,10 +8,31 @@ module LCD_display_string
 
    always 
 		case (reg_msg)
-		16'b0000000000000000:
+		16'b0000000000000000: //0
 		begin
 			case (index)
-				5'h00: out <= 8'h57;
+				5'h00: out <= 8'h2a;
+				5'h01: out <= 8'h2a;
+				5'h02: out <= 8'h57;
+				5'h03: out <= 8'h65;
+				5'h04: out <= 8'h6c;
+				5'h05: out <= 8'h63;
+				5'h06: out <= 8'h6f;
+				5'h07: out <= 8'h6d;
+				5'h08: out <= 8'h65;
+				5'h09: out <= 8'h20;
+				5'h0A: out <= 8'h74;
+				5'h0B: out <= 8'h6f;
+				5'h0C: out <= 8'h20;
+				5'h0D: out <= 8'h6d;
+				5'h0E: out <= 8'h69;
+				5'h0F: out <= 8'h72;
+				5'h10: out <= 8'h4f;
+				5'h11: out <= 8'h53;
+				5'h12: out <= 8'h2a;
+				5'h13: out <= 8'h2a;
+				5'h14: out <= 8'h20;
+				/*5'h00: out <= 8'h57;
 				5'h01: out <= 8'h65;
 				5'h02: out <= 8'h6c;
 				5'h03: out <= 8'h63;
@@ -35,11 +56,11 @@ module LCD_display_string
 				5'h15: out <= 8'h74;
 				5'h16: out <= 8'h65;
 				5'h17: out <= 8'h6d;
-				5'h18: out <= 8'h20;
+				5'h18: out <= 8'h20;*/
 			default: out <= 8'h20;
 			endcase
 		end
-		16'b0000000000000001:
+		16'b0000000000000001: //1
 		begin
 			case (index)
 				5'h00: out <= 8'h6d;
@@ -76,7 +97,7 @@ module LCD_display_string
 			endcase
 		end
 		
-		16'b0000000000000010:
+		16'b0000000000000010: //2
 		begin
 			case (index)
 				5'h00: out <= 8'h68;
@@ -110,7 +131,7 @@ module LCD_display_string
 			endcase
 		end
 		
-		16'b0000000000000011:
+		16'b0000000000000011: //3
 		begin
 			case (index)
 				5'h00: out <= 8'h49;
@@ -133,7 +154,7 @@ module LCD_display_string
 			endcase
 		end
 		
-		16'b0000000000000100:
+		16'b0000000000000100: //4
 		begin
 			case (index)
 				5'h00: out <= 8'h52;
@@ -161,7 +182,7 @@ module LCD_display_string
 			endcase
 		end
 		
-		16'b0000000000000101:
+		16'b0000000000000101: //5
 		begin
 			case (index)
 				5'h00: out <= 8'h41;
@@ -200,10 +221,31 @@ module LCD_display_string
 			endcase
 		end
 		
-		16'b0000000000000110:
+		16'b0000000000000110: //6
 		begin
 			case (index)
-				5'h00: out <= 8'h43;
+				5'h00: out <= 8'h51;
+				5'h01: out <= 8'h75;
+				5'h02: out <= 8'h65;
+				5'h03: out <= 8'h75;
+				5'h04: out <= 8'h65;
+				5'h05: out <= 8'h20;
+				5'h06: out <= 8'h69;
+				5'h07: out <= 8'h73;
+				5'h08: out <= 8'h20;
+				5'h09: out <= 8'h62;
+				5'h0A: out <= 8'h65;
+				5'h0B: out <= 8'h69;
+				5'h0C: out <= 8'h6e;
+				5'h0D: out <= 8'h67;
+				5'h0E: out <= 8'h20;
+				5'h0F: out <= 8'h72;
+				5'h10: out <= 8'h65;
+				5'h11: out <= 8'h73;
+				5'h12: out <= 8'h65;
+				5'h13: out <= 8'h74;
+				5'h14: out <= 8'h20;
+				/*5'h00: out <= 8'h43;
 				5'h01: out <= 8'h68;
 				5'h02: out <= 8'h6f;
 				5'h03: out <= 8'h6f;
@@ -229,15 +271,36 @@ module LCD_display_string
 				5'h17: out <= 8'h69;
 				5'h18: out <= 8'h6f;
 				5'h19: out <= 8'h6e;
-				5'h1A: out <= 8'h20;
+				5'h1A: out <= 8'h20;*/
 			default: out <= 8'h20;
 			endcase
 		end
 		
-		16'b0000000000000111:
+		16'b0000000000000111: //7
 		begin
 			case (index)
-				5'h00: out <= 8'h31;
+				5'h00: out <= 8'h50;
+				5'h01: out <= 8'h43;
+				5'h02: out <= 8'h73;
+				5'h03: out <= 8'h20;
+				5'h04: out <= 8'h61;
+				5'h05: out <= 8'h72;
+				5'h06: out <= 8'h65;
+				5'h07: out <= 8'h20;
+				5'h08: out <= 8'h62;
+				5'h09: out <= 8'h65;
+				5'h0A: out <= 8'h69;
+				5'h0B: out <= 8'h6e;
+				5'h0C: out <= 8'h67;
+				5'h0D: out <= 8'h20;
+				5'h0E: out <= 8'h72;
+				5'h0F: out <= 8'h65;
+				5'h10: out <= 8'h73;
+				5'h11: out <= 8'h65;
+				5'h12: out <= 8'h74;
+				5'h13: out <= 8'h20;
+
+				/*5'h00: out <= 8'h31;
 				5'h01: out <= 8'h20;
 				5'h02: out <= 8'h2d;
 				5'h03: out <= 8'h20;
@@ -270,15 +333,45 @@ module LCD_display_string
 				5'h1E: out <= 8'h6c;
 				5'h1F: out <= 8'h65;
 //				5'h10: out <= 8'h74;
-//				5'h11: out <= 8'h65;
+//				5'h11: out <= 8'h65;*/
 			default: out <= 8'h20;
 			endcase
 		end
 		
-		16'b0000000000001000:
+		16'b0000000000001000: //8
 		begin
 			case (index)
-				5'h00: out <= 8'h54;
+				5'h00: out <= 8'h49;
+				5'h01: out <= 8'h6e;
+				5'h02: out <= 8'h74;
+				5'h03: out <= 8'h65;
+				5'h04: out <= 8'h72;
+				5'h05: out <= 8'h72;
+				5'h06: out <= 8'h75;
+				5'h07: out <= 8'h70;
+				5'h08: out <= 8'h74;
+				5'h09: out <= 8'h69;
+				5'h0A: out <= 8'h6f;
+				5'h0B: out <= 8'h6e;
+				5'h0C: out <= 8'h20;
+				5'h0D: out <= 8'h63;
+				5'h0E: out <= 8'h61;
+				5'h0F: out <= 8'h75;
+				5'h10: out <= 8'h73;
+				5'h11: out <= 8'h65;
+				5'h12: out <= 8'h64;
+				5'h13: out <= 8'h20;
+				5'h14: out <= 8'h62;
+				5'h15: out <= 8'h79;
+				5'h16: out <= 8'h20;
+				5'h17: out <= 8'h73;
+				5'h18: out <= 8'h79;
+				5'h19: out <= 8'h73;
+				5'h1A: out <= 8'h6f;
+				5'h1B: out <= 8'h75;
+				5'h1C: out <= 8'h74;
+				5'h1D: out <= 8'h20;
+				/*5'h00: out <= 8'h54;
 				5'h01: out <= 8'h6f;
 				5'h02: out <= 8'h6f;
 				5'h03: out <= 8'h20;
@@ -298,15 +391,46 @@ module LCD_display_string
 				5'h11: out <= 8'h6c;
 				5'h12: out <= 8'h6c;
 				5'h13: out <= 8'h21;
-				5'h14: out <= 8'h20;
+				5'h14: out <= 8'h20;*/
 			default: out <= 8'h20;
 			endcase
 		end
 		
-		16'b0000000000001001:
+		16'b0000000000001001: //9
 		begin
 			case (index)
-				5'h00: out <= 8'h45;
+				5'h00: out <= 8'h49;
+				5'h01: out <= 8'h6e;
+				5'h02: out <= 8'h74;
+				5'h03: out <= 8'h65;
+				5'h04: out <= 8'h72;
+				5'h05: out <= 8'h72;
+				5'h06: out <= 8'h75;
+				5'h07: out <= 8'h70;
+				5'h08: out <= 8'h74;
+				5'h09: out <= 8'h69;
+				5'h0A: out <= 8'h6f;
+				5'h0B: out <= 8'h6e;
+				5'h0C: out <= 8'h20;
+				5'h0D: out <= 8'h63;
+				5'h0E: out <= 8'h61;
+				5'h0F: out <= 8'h75;
+				5'h10: out <= 8'h73;
+				5'h11: out <= 8'h65;
+				5'h12: out <= 8'h64;
+				5'h13: out <= 8'h20;
+				5'h14: out <= 8'h62;
+				5'h15: out <= 8'h79;
+				5'h16: out <= 8'h20;
+				5'h17: out <= 8'h73;
+				5'h18: out <= 8'h79;
+				5'h19: out <= 8'h73;
+				5'h1A: out <= 8'h65;
+				5'h1B: out <= 8'h6e;
+				5'h1C: out <= 8'h64;
+				5'h1D: out <= 8'h20;
+
+				/*5'h00: out <= 8'h45;
 				5'h01: out <= 8'h6d;
 				5'h02: out <= 8'h74;
 				5'h03: out <= 8'h65;
@@ -337,15 +461,29 @@ module LCD_display_string
 				5'h1C: out <= 8'h75;
 				5'h1D: out <= 8'h6e;
 				5'h1E: out <= 8'h74;
-				5'h1F: out <= 8'h20;
+				5'h1F: out <= 8'h20;*/
 			default: out <= 8'h20;
 			endcase
 		end
 		
-		16'b0000000000001010:
+		16'b0000000000001010: //10
 		begin
 			case (index)
-				5'h00: out <= 8'h49;
+				5'h00: out <= 8'h42;
+				5'h01: out <= 8'h49;
+				5'h02: out <= 8'h4f;
+				5'h03: out <= 8'h53;
+				5'h04: out <= 8'h20;
+				5'h05: out <= 8'h73;
+				5'h06: out <= 8'h74;
+				5'h07: out <= 8'h61;
+				5'h08: out <= 8'h72;
+				5'h09: out <= 8'h74;
+				5'h0A: out <= 8'h69;
+				5'h0B: out <= 8'h6e;
+				5'h0C: out <= 8'h67;
+				5'h0D: out <= 8'h20;
+				/*5'h00: out <= 8'h49;
 				5'h01: out <= 8'h6e;
 				5'h02: out <= 8'h73;
 				5'h03: out <= 8'h74;
@@ -372,15 +510,27 @@ module LCD_display_string
 				5'h18: out <= 8'h69;
 				5'h19: out <= 8'h74;
 				5'h1A: out <= 8'h73;
-				5'h1B: out <= 8'h20;
+				5'h1B: out <= 8'h20;*/
 			default: out <= 8'h20;
 			endcase
 		end
 		
-		16'b0000000000001011:
+		16'b0000000000001011: //11
 		begin
 			case (index)
-				5'h00: out <= 8'h49;
+				5'h00: out <= 8'h42;
+				5'h01: out <= 8'h49;
+				5'h02: out <= 8'h4f;
+				5'h03: out <= 8'h53;
+				5'h04: out <= 8'h20;
+				5'h05: out <= 8'h65;
+				5'h06: out <= 8'h6e;
+				5'h07: out <= 8'h64;
+				5'h08: out <= 8'h69;
+				5'h09: out <= 8'h6e;
+				5'h0A: out <= 8'h67;
+				5'h0B: out <= 8'h20;
+				/*5'h00: out <= 8'h49;
 				5'h01: out <= 8'h6e;
 				5'h02: out <= 8'h73;
 				5'h03: out <= 8'h74;
@@ -406,15 +556,44 @@ module LCD_display_string
 				5'h17: out <= 8'h69;
 				5'h18: out <= 8'h74;
 				5'h19: out <= 8'h73;
-				5'h1A: out <= 8'h20;
+				5'h1A: out <= 8'h20;*/
 			default: out <= 8'h20;
 			endcase
 		end
 		
-		16'b0000000000001100:
+		16'b0000000000001100: //12
 		begin
 			case (index)
 				5'h00: out <= 8'h49;
+				5'h01: out <= 8'h6e;
+				5'h02: out <= 8'h74;
+				5'h03: out <= 8'h65;
+				5'h04: out <= 8'h72;
+				5'h05: out <= 8'h72;
+				5'h06: out <= 8'h75;
+				5'h07: out <= 8'h70;
+				5'h08: out <= 8'h74;
+				5'h09: out <= 8'h69;
+				5'h0A: out <= 8'h6f;
+				5'h0B: out <= 8'h6e;
+				5'h0C: out <= 8'h20;
+				5'h0D: out <= 8'h63;
+				5'h0E: out <= 8'h61;
+				5'h0F: out <= 8'h75;
+				5'h10: out <= 8'h73;
+				5'h11: out <= 8'h65;
+				5'h12: out <= 8'h64;
+				5'h13: out <= 8'h20;
+				5'h14: out <= 8'h62;
+				5'h15: out <= 8'h79;
+				5'h16: out <= 8'h20;
+				5'h17: out <= 8'h73;
+				5'h18: out <= 8'h79;
+				5'h19: out <= 8'h73;
+				5'h1A: out <= 8'h69;
+				5'h1B: out <= 8'h6e;
+				5'h1C: out <= 8'h20;
+				/*5'h00: out <= 8'h49;
 				5'h01: out <= 8'h6e;
 				5'h02: out <= 8'h73;
 				5'h03: out <= 8'h65;
@@ -442,7 +621,7 @@ module LCD_display_string
 				5'h19: out <= 8'h69;
 				5'h1A: out <= 8'h6c;
 				5'h1B: out <= 8'h65;
-				5'h1C: out <= 8'h20;
+				5'h1C: out <= 8'h20;*/
 			default: out <= 8'h20;
 			endcase
 		end
@@ -1217,7 +1396,6 @@ module LCD_display_string
      endcase 
 	  
 endmodule 
-
 
 
 

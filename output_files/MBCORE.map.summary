@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Thu Dec 19 21:47:55 2019
+Analysis & Synthesis Status : Successful - Fri Dec 20 12:30:29 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : MBCORE
 Top-level Entity Name : core
 Family : Cyclone IV E
-Total logic elements : 8,730
-    Total combinational functions : 6,758
+Total logic elements : 8,692
+    Total combinational functions : 6,720
     Dedicated logic registers : 2,316
 Total registers : 2316
 Total pins : 187
