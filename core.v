@@ -1,5 +1,6 @@
-module core(clk_button, clock50M, reset, switches, unidade, dezena, centena, mil, milhao, bilhao, trilhao, quatrilhao, outPC, 
-intrpt, bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, saidaPC, lcd_on,lcd_blon,lcd_rw,lcd_en,lcd_rs, lcd_data); 
+module core(clk_button, clock50M, reset, switches, unidade, dezena, centena, mil, milhao, bilhao, trilhao, quatrilhao, outPC,
+			bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, saidaPC, lcd_on,lcd_blon,lcd_rw,lcd_en,lcd_rs, lcd_data,
+			only_proc_pc, change_proc_pc); 
 
 	input clk_button, reset,clock50M;	
 	wire /*clock,*/ botaosaida, botaoBom;
@@ -11,8 +12,9 @@ intrpt, bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, sai
 		  jrMUX, displayFlag, hlt, jal,
 		  //a partir daqui, adicionados
 		  write_flag, write_os, mux_hd_control, lcd_trd_msg,
-		  proc_swap, chng_wrt_shft, chng_rd_shft;
-	
+		  proc_swap, chng_wrt_shft, chng_rd_shft,
+		  /*change_proc_pc,*/ save_proc_pc;
+	output wire change_proc_pc;
 	wire MODE; //user/kernel mode flag
 	
 	wire [31:0] input_instr, read_address;
@@ -28,14 +30,13 @@ intrpt, bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, sai
 	wire [31:0] rdata3;
 	output bios_select,  bios_reset;
 	wire write_hd; //bios_select,  bios_reset; //adicionados
-	//wire intrpt;
+	wire intrpt;
 	output wire clock;
 	output wire stateOut;
 	output wire [31:0] bios_output;
 	output wire[9:0] outPC;
 	output wire[9:0] saidaPC;
 	output wire[6:0] unidade, dezena, centena,mil, milhao, bilhao, trilhao, quatrilhao;
-	output wire intrpt;
 	output wire [31:0] Instruction;
 	
 	wire [31:0] hd_output, saida_mux_hd;
@@ -45,6 +46,10 @@ intrpt, bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, sai
 	wire [31:0] shift_amount;
 	
 	wire [31:0] exec_proc;
+	
+	wire [31:0] intrpt_val;
+	
+	output wire [9:0] only_proc_pc;
 	
 	wire decoded_exec_proc, wrt_shft_enabler, rd_shft_enabler;
 	
@@ -64,14 +69,15 @@ intrpt, bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, sai
 								  .db_out(botaosaida), 
 								  .saida(botaoBom));
 								  
-	INTERRUPTION_MODULE int_module (.clk(clock), 
+	INTERRUPTION_MODULE int_module (.clock(clock), 
 											  .opcode(selected_instruction[31:26]), 
-											  .intrpt(intrpt));
+											  .intrpt(intrpt),
+											  .intrpt_val(intrpt_val));
 	
 	PROCESS_KEEPER keeper(.proc_swap(proc_swap), 
 								 .clock(clock), 
-								 .intrpt(1'b0), 
-								 .new_proc_num(rdata1), 
+								 .intrpt(intrpt), 
+								 .new_proc_num(rdata2), 
 								 .exec_proc(exec_proc));
 	
 	PROCESS_DECODE pdecoder(.process_in(exec_proc), 
@@ -93,8 +99,10 @@ intrpt, bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, sai
 			//.newAddress(saidaPC),
 			.outPC(outPC),
 			.bios_reset(bios_reset), 
-			.proc_num(), //adicionado
-			.only_proc_pc() //adicionado
+			.proc_num(decoded_exec_proc), //adicionado
+			.only_proc_pc(only_proc_pc), //adicionado
+			.stored_pc(rdata2[9:0]), //adicionado
+			.change_proc_pc(change_proc_pc) //adicionado
 			);	
 	
 	HD hd(.clk_auto(clock50M), 
@@ -155,7 +163,9 @@ intrpt, bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, sai
 							  .lcd_trd_msg(lcd_trd_msg), //adicionado
 							  .proc_swap(proc_swap) ,  //adicionado
 							  .chng_wrt_shft(chng_wrt_shft), //adicionado
-							  .chng_rd_shft(chng_rd_shft) //adicionado
+							  .chng_rd_shft(chng_rd_shft), //adicionado
+							  .change_proc_pc(change_proc_pc), //adicionado
+							  .save_proc_pc(save_proc_pc) //adicionado
 							  ); 
 	
 	MUX_INPUT input_mux(.entrada1(selected_instruction[15:0]), 
@@ -188,8 +198,12 @@ intrpt, bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, sai
 					  .PC(outPC),
 					  .jal(jal),
 					  .rd_shft_enabler(rd_shft_enabler), //adiconado
-					  .wrt_shft_enabler(wrt_shft_enabler) //adiconado
-					  );					  
+					  .wrt_shft_enabler(wrt_shft_enabler), //adiconado
+					  .intrpt_val(intrpt_val), //adicionado
+					  .intrpt(intrpt), //adicionado
+					  .proc_pc(only_proc_pc),
+					  .save_proc_pc(save_proc_pc) //adicionado
+					  );					   
 	
 	
 	SE_26_32 estensor_26_32(.sinal_entrada(selected_instruction[25:0]), 
@@ -208,7 +222,7 @@ intrpt, bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, sai
 			  .sinalBranch(sinalBranch),
 			  .branch(branch));	
 			  
-	MEM_SHIFTER mem_shifter(.proc_index(2), //adicionado 
+	MEM_SHIFTER mem_shifter(.proc_index(exec_proc), //adicionado 
 									.shift_amount(shift_amount) //adicionado
 									);
 

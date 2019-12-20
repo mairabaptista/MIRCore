@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 d/home/maira/Documents/labSO1 (2)/MBCORE_restored/simulation/qsim
 vcore
-Z1 !s110 1576368725
+Z1 !s110 1576698082
 !i10b 1
-!s100 Oni07VGIA1Pj75;;c[4WT2
-IbNKN[49AIHU1bE^J1Oojm0
+!s100 6dA[]ZU;7JD`C8b?2g>6?2
+IKi;mdW5kRP3F=UfG^7;9Z2
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1576368724
+Z3 w1576698080
 Z4 8MBCORE.vo
 Z5 FMBCORE.vo
 L0 31
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1576368725.000000
+Z7 !s108 1576698081.000000
 Z8 !s107 MBCORE.vo|
 Z9 !s90 -work|work|MBCORE.vo|
 !i113 1
@@ -32,11 +32,11 @@ Z11 tCvgOpt 0
 vcore_vlg_vec_tst
 R1
 !i10b 1
-!s100 F`YUKka8`OJ@TJj7YBo;?2
-IJn?MkVUzYdXfCgKn5@:MV3
+!s100 d@i:YU8Ejj<IohemVhPz<3
+IK[mWI`<=>[`^C4VkK1>^e0
 R2
 R0
-w1576368722
+w1576698078
 8Waveform.vwf.vt
 FWaveform.vwf.vt
 L0 29
@@ -44,7 +44,7 @@ R6
 r1
 !s85 0
 31
-R7
+!s108 1576698082.000000
 !s107 Waveform.vwf.vt|
 !s90 -work|work|Waveform.vwf.vt|
 !i113 1
@@ -53,14 +53,14 @@ R11
 vhard_block
 R1
 !i10b 1
-!s100 nhY53[NdGP3]Y2Tk1=K_L0
-Ij1G8LN8K[4T^64UMn]S:T0
+!s100 8TMdT;OjaQjS?_h9M<8CT0
+IFb6AKz]W]kV^maBHT9DNz1
 R2
 R0
 R3
 R4
 R5
-L0 122105
+L0 195796
 R6
 r1
 !s85 0

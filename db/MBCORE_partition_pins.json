@@ -268,10 +268,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "intrpt",
-					"strict" : false
-				},
-				{
 					"name" : "bios_output[0]",
 					"strict" : false
 				},
@@ -536,10 +532,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "bios_select",
-					"strict" : false
-				},
-				{
 					"name" : "bios_reset",
 					"strict" : false
 				},
@@ -584,63 +576,51 @@
 					"strict" : false
 				},
 				{
+					"name" : "only_proc_pc[0]",
+					"strict" : false
+				},
+				{
+					"name" : "only_proc_pc[1]",
+					"strict" : false
+				},
+				{
+					"name" : "only_proc_pc[2]",
+					"strict" : false
+				},
+				{
+					"name" : "only_proc_pc[3]",
+					"strict" : false
+				},
+				{
+					"name" : "only_proc_pc[4]",
+					"strict" : false
+				},
+				{
+					"name" : "only_proc_pc[5]",
+					"strict" : false
+				},
+				{
+					"name" : "only_proc_pc[6]",
+					"strict" : false
+				},
+				{
+					"name" : "only_proc_pc[7]",
+					"strict" : false
+				},
+				{
+					"name" : "only_proc_pc[8]",
+					"strict" : false
+				},
+				{
+					"name" : "only_proc_pc[9]",
+					"strict" : false
+				},
+				{
+					"name" : "change_proc_pc",
+					"strict" : false
+				},
+				{
 					"name" : "clock50M",
-					"strict" : false
-				},
-				{
-					"name" : "switches[15]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[14]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[13]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[12]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[11]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[10]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[9]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[8]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[7]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[6]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[5]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[4]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[3]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[2]",
 					"strict" : false
 				},
 				{
@@ -649,6 +629,62 @@
 				},
 				{
 					"name" : "switches[0]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[4]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[5]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[6]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[7]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[2]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[3]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[8]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[9]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[10]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[11]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[12]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[13]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[14]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[15]",
 					"strict" : false
 				},
 				{

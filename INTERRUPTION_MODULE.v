@@ -1,41 +1,34 @@
-module INTERRUPTION_MODULE (clk, opcode, intrpt);
+module INTERRUPTION_MODULE (clock, opcode, intrpt, intrpt_val);
 
-	parameter QUANTUM = 10; //low values to show up on waveform
-	parameter DEFAULT_WIDTH = 6;
-	parameter TIMER_WIDTH = 5;
-	parameter OFFSET_WIDTH = 16 ;
+	parameter DATA_WIDTH = 32;
 	
-	//input [(DEFAULT_WIDTH -1):0] offset,
-	input clk;
-	input [(DEFAULT_WIDTH-1):0] opcode;
-	//output reg [(DEFAULT_WIDTH -1):0] intrpt_val; 
+	input clock;
+	input [5:0] opcode;
+	output reg [(DATA_WIDTH -1):0] intrpt_val; 
 	output reg intrpt;
 
-	reg [(TIMER_WIDTH -1):0] timer;
-
-	always @ ( posedge clk )
+	always @ ( posedge clock )
 	begin
 		case( opcode )
-			6'b100101: //input
+			6'b111010: //input
 			begin
-				timer = 1'b0;
 				intrpt = 1'b1;
-				//intrpt_val = 1'b1;
+				intrpt_val <= 32'b00000000000000000000000000000001;
 			end
-			6'b111111: //output
+			6'b111011: //output
 			begin
-				timer = 1'b0;
-				intrpt = 1'b1;
-				//intrpt_val = 1'b1;
-				//intrpt = ( proc_num == 1'b0 ) ? 1'b0 : 1'b1;
-				//intrpt_val = ( proc_num == 1'b0 ) ? 6'b000000 : 6'b000100;
+				intrpt = 1'b1;	
+				intrpt_val <= 32'b00000000000000000000000000000010;
+			end
+			6'b111100: //program end
+			begin
+				intrpt = 1'b1;	
+				intrpt_val <= 32'b00000000000000000000000000000011;
 			end
 			default:
 			begin
-				timer = ( timer == QUANTUM ) ? 1'b0 : timer + 1'b1; //quantum counter, resets when reaches a certain quantum
 				intrpt = 1'b0;
-				//intrpt = ( timer == QUANTUM ) ? ( proc_num == 1'b0 ) ? 1'b0 : 1'b1 : 1'b0;
-				//intrpt_val = ( timer == QUANTUM ) ? ( proc_num == 1'b0 ) ? 6'b000000 : 6'b000001 : 6'b000000;
+				intrpt_val <= 32'b0;
 			end
 		endcase
 	end

@@ -1,7 +1,8 @@
 module controlUnit(rdy,opcode, ALUMUX, 
 						regWrite, regDest, ALUControl, memWrite, 
 						memRead, memMUX, inputMUX, branch, jMUX, jrMUX, displayFlag, hlt, reset, jal, bios_select,
-						write_flag, write_os, mux_hd_control, lcd_trd_msg, proc_swap, chng_wrt_shft, chng_rd_shft);
+						write_flag, write_os, mux_hd_control, lcd_trd_msg, proc_swap, chng_wrt_shft, chng_rd_shft,
+						change_proc_pc, save_proc_pc);
 	
 	input rdy, reset;
 	input [5:0]opcode;
@@ -26,6 +27,8 @@ module controlUnit(rdy,opcode, ALUMUX,
 	output reg proc_swap;		//flag de troca de processo
 	output reg chng_wrt_shft;	//flag de mudanca de shift de escrita
 	output reg chng_rd_shft; //flag de mudanca de shift de leitura
+	output reg change_proc_pc; //flag de mudar o pc do processo 
+	output reg save_proc_pc; //flag para salvar o pc do processo
 	
 	always @(*)
 		begin
@@ -52,6 +55,8 @@ module controlUnit(rdy,opcode, ALUMUX,
 			proc_swap = 1'b0;
 			chng_wrt_shft = 1'b0; 
 			chng_rd_shft = 1'b0;
+			change_proc_pc = 1'b0;
+			save_proc_pc = 1'b0;
 			
 			case(opcode)
 					6'b000000: //soma
@@ -247,13 +252,13 @@ module controlUnit(rdy,opcode, ALUMUX,
 							regDest = 1'b0;
 							regWrite = 1'b0;
 						end
-					6'b111110: 	//bios_select
+					/*6'b111110: 	//bios_select
 						begin
 							bios_select = 1'b1;
 							regDest = 1'b0;
 							regWrite = 1'b0;
 							//bios_reset = 1'b1;
-						end
+						end*/
 					//SO
 					6'b110010: //lhd
 						begin
@@ -266,6 +271,13 @@ module controlUnit(rdy,opcode, ALUMUX,
 							regWrite = 1'b0;
 							write_flag = 1'b1;
 							write_os = 1'b1;
+						end
+					6'b110111: //smem_proc
+						begin
+							regDest = 1'b0;
+							regWrite = 1'b0;
+							write_flag = 1'b1;
+							write_os = 1'b0;
 						end
 					6'b110110: //lcd
 						begin
@@ -284,6 +296,43 @@ module controlUnit(rdy,opcode, ALUMUX,
 							regDest = 1'b0;
 							regWrite = 1'b0;
 							chng_rd_shft = 1'b1;
+						end
+					6'b111101: //getpc
+						begin
+							regDest = 1'b0;
+							regWrite = 1'b0;
+							save_proc_pc = 1'b1;
+						end
+					6'b111110: //setpc
+						begin						
+						
+							regDest = 1'b0;
+							regWrite = 1'b0;
+							change_proc_pc = 1'b1;
+						end
+					6'b100111: //sprc
+						begin						
+						
+							regDest = 1'b0;
+							regWrite = 1'b0;
+							proc_swap = 1'b1;
+						end
+					6'b111010: //sysin
+						begin						
+						
+							regDest = 1'b0;
+							regWrite = 1'b0;
+						end
+					6'b111011: //sysout
+						begin						
+						
+							regDest = 1'b0;
+							regWrite = 1'b0;
+						end
+					6'b111100: //sysend
+						begin							
+							regDest = 1'b0;
+							regWrite = 1'b0;
 						end
 					
 					default:

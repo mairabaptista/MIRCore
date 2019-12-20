@@ -11,7 +11,7 @@ module InstructionMem(
 	);
 
 	parameter DATA_WIDTH = 32;
-	parameter PAGE_WIDTH = 10;
+	parameter PAGE_WIDTH = 11;
 	
 	//INPUTS
 	input [(DATA_WIDTH - 1):0] address;

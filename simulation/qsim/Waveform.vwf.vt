@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "12/14/2019 21:12:02"
+// Generated on "12/18/2019 16:41:18"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          core
 // 
@@ -40,11 +40,18 @@ wire [31:0] bios_output;
 wire bios_reset;
 wire bios_select;
 wire [6:0] centena;
+wire change_proc_pc;
 wire clock;
 wire [6:0] dezena;
-wire intrpt;
+wire lcd_blon;
+wire [7:0] lcd_data;
+wire lcd_en;
+wire lcd_on;
+wire lcd_rs;
+wire lcd_rw;
 wire [6:0] mil;
 wire [6:0] milhao;
+wire [9:0] only_proc_pc;
 wire [9:0] outPC;
 wire [6:0] quatrilhao;
 wire [9:0] saidaPC;
@@ -61,13 +68,20 @@ core i1 (
 	.bios_reset(bios_reset),
 	.bios_select(bios_select),
 	.centena(centena),
+	.change_proc_pc(change_proc_pc),
 	.clk_button(clk_button),
 	.clock(clock),
 	.clock50M(clock50M),
 	.dezena(dezena),
-	.intrpt(intrpt),
+	.lcd_blon(lcd_blon),
+	.lcd_data(lcd_data),
+	.lcd_en(lcd_en),
+	.lcd_on(lcd_on),
+	.lcd_rs(lcd_rs),
+	.lcd_rw(lcd_rw),
 	.mil(mil),
 	.milhao(milhao),
+	.only_proc_pc(only_proc_pc),
 	.outPC(outPC),
 	.quatrilhao(quatrilhao),
 	.reset(reset),

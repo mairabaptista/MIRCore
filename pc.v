@@ -1,8 +1,8 @@
-module pc(clk, reset, hlt, address, outPC, bios_reset, proc_num, only_proc_pc);
+module pc(clk, reset, hlt, address, outPC, bios_reset, proc_num, only_proc_pc, stored_pc, change_proc_pc);
 
 	//INPUTS
-	input clk, hlt, reset, bios_reset, proc_num;
-	input [9:0]address;	
+	input clk, hlt, reset, bios_reset, proc_num, change_proc_pc;
+	input [9:0] address, stored_pc;	
 	
 	//OUTPUTS
 	output [9:0] outPC; //prog_count
@@ -31,6 +31,10 @@ module pc(clk, reset, hlt, address, outPC, bios_reset, proc_num, only_proc_pc);
 					begin
 						pc_os <= 10'b0;
 					end
+				if( change_proc_pc == 1'b1 )
+				begin
+					pc_proc <= stored_pc; 
+				end
 			end
 			
 			else //process pc
@@ -57,6 +61,9 @@ module pc(clk, reset, hlt, address, outPC, bios_reset, proc_num, only_proc_pc);
 	assign only_proc_pc = pc_proc;
 	//assign outPC = newAddress;
 endmodule
+
+
+
 
 
 /*

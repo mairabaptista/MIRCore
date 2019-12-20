@@ -5,7 +5,7 @@ module DataMem(writeDataIN, address, clk, memWrite, display, displayFlag, readDa
 	output reg [31:0] readDataOut, display;
 	
 	reg [31:0] displayout;
-	parameter addr = 10;
+	parameter addr = 13;
 	reg [31:0] MEMORIA[((2**addr)-1):0];
 	
 	always @(negedge clk)

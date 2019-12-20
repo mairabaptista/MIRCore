@@ -8,7 +8,7 @@ output [31:0] shift_amount;
 
 reg [31:0] shift_reg;
 
-parameter SHIFT = 512;
+parameter SHIFT = 1024;
 
 always @ (*) begin
 	shift_reg <= proc_index * SHIFT;
