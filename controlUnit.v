@@ -2,7 +2,7 @@ module controlUnit(rdy,opcode, ALUMUX,
 						regWrite, regDest, ALUControl, memWrite, 
 						memRead, memMUX, inputMUX, branch, jMUX, jrMUX, displayFlag, hlt, reset, jal, bios_select,
 						write_flag, write_os, mux_hd_control, lcd_trd_msg, proc_swap, chng_wrt_shft, chng_rd_shft,
-						change_proc_pc, save_proc_pc);
+						change_proc_pc, save_proc_pc, rx_signal, tx_signal);
 	
 	input rdy, reset;
 	input [5:0]opcode;
@@ -29,6 +29,9 @@ module controlUnit(rdy,opcode, ALUMUX,
 	output reg chng_rd_shft; //flag de mudanca de shift de leitura
 	output reg change_proc_pc; //flag de mudar o pc do processo 
 	output reg save_proc_pc; //flag para salvar o pc do processo
+	//net lab
+	output reg rx_signal; 	//flag para receive signal
+	output reg tx_signal; 	//flag para transmit signal
 	
 	always @(*)
 		begin
@@ -57,6 +60,8 @@ module controlUnit(rdy,opcode, ALUMUX,
 			chng_rd_shft = 1'b0;
 			change_proc_pc = 1'b0;
 			save_proc_pc = 1'b0;
+			rx_signal = 1'b0;
+			tx_signal = 1'b0;
 			
 			case(opcode)
 					6'b000000: //soma
@@ -334,7 +339,31 @@ module controlUnit(rdy,opcode, ALUMUX,
 							regDest = 1'b0;
 							regWrite = 1'b0;
 						end
-					
+					//net lab
+					6'b101111: //rcv
+						begin
+							 regDest = 1'b0;
+							 memMUX = 1'b0;
+							 memRead = 1'b1;
+							 rx_signal = 1'b1;
+							 ALUControl = 6'b000000;
+							 ALUMUX = 1'b1;
+							 if(rdy) 
+								  hlt = 1'b1;
+							 else
+								  hlt = 1'b0;                             
+						end
+					6'b101110: //snd
+						begin
+							 tx_signal = 1'b1;
+							 regDest = 1'b0;
+							 regWrite = 1'b0;
+							 if(rdy) 
+								  hlt = 1'b1;
+							 else
+								  hlt = 1'b0;                         
+						end
+				
 					default:
 						begin
 							regDest = 1'b0;

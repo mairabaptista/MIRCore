@@ -13,7 +13,9 @@ module core(clk_button, clock50M, reset, switches, unidade, dezena, centena, mil
 		  //a partir daqui, adicionados
 		  write_flag, write_os, mux_hd_control, lcd_trd_msg,
 		  proc_swap, chng_wrt_shft, chng_rd_shft,
-		  /*change_proc_pc,*/ save_proc_pc;
+		  /*change_proc_pc,*/ save_proc_pc,
+		  //net lab
+		  tx_signal, rx_signal;
 	output wire change_proc_pc;
 	wire MODE; //user/kernel mode flag
 	
@@ -166,7 +168,8 @@ module core(clk_button, clock50M, reset, switches, unidade, dezena, centena, mil
 							  .chng_rd_shft(chng_rd_shft), //adicionado
 							  .change_proc_pc(change_proc_pc), //adicionado
 							  .save_proc_pc(save_proc_pc) //adicionado
-							  ); 
+							  .rx_signal(rx_signal), //net lab
+							  .tx_signal(tx_signal)); //net lab
 	
 	MUX_INPUT input_mux(.entrada1(selected_instruction[15:0]), 
 							  .entrada2(switches), 
