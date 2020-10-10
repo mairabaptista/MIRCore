@@ -1,8 +1,11 @@
-module core(clk_button, clock50M, reset, switches, unidade, dezena, centena, mil, milhao, bilhao, trilhao, quatrilhao, outPC,
+module core(clock50M, reset, switches, clock, UART_in, UART_out, wb_flag, UARTC, rdata2, outPC, display); 
+			
+/* module core(clk_button, clock50M, reset, switches, unidade, dezena, centena, mil, milhao, bilhao, trilhao, quatrilhao, outPC,
 			bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, saidaPC, lcd_on,lcd_blon,lcd_rw,lcd_en,lcd_rs, lcd_data,
-			only_proc_pc, change_proc_pc); 
-
-	input clk_button, reset,clock50M;	
+			only_proc_pc, change_proc_pc, UART_in, UART_out); */
+	input wb_flag;
+	//output UARTC;
+	input  reset, clock50M;	//clk_button,
 	wire /*clock,*/ botaosaida, botaoBom;
 	//Entrada FPGA
 	input [15:0] switches;
@@ -13,16 +16,26 @@ module core(clk_button, clock50M, reset, switches, unidade, dezena, centena, mil
 		  //a partir daqui, adicionados
 		  write_flag, write_os, mux_hd_control, lcd_trd_msg,
 		  proc_swap, chng_wrt_shft, chng_rd_shft,
-		  /*change_proc_pc,*/ save_proc_pc,
+		  change_proc_pc, save_proc_pc,
 		  //net lab
-		  tx_signal, rx_signal;
-	output wire change_proc_pc;
+		  tx_signal, rx_signal, baud_rate;
+	//output wire change_proc_pc;
 	wire MODE; //user/kernel mode flag
 	
 	wire [31:0] input_instr, read_address;
 	
 	wire [31:0] Instruction, imediato_estendido, input_estendido_26_32, inmux_output, rdataout;	
-	wire [31:0] rdata1, rdata2,saidaBREG2, saida_memMUX, saida_prejumpMUX, saidaAdder, saida_jmux, display, resultado, saidareg, entradaPC;	
+	wire [31:0] rdata1, /*rdata2,*/ saidaBREG2, saida_memMUX, saida_prejumpMUX, saidaAdder, saida_jmux, /*display,*/ resultado, saidareg, entradaPC;	
+	
+	//saida UART
+	output wire [31:0] UART_out, rdata2, display;
+	//entrada UART
+	input [31:0] UART_in;
+	
+	wire [31:0] receive_data, transmit_data;
+	output wire [2:0] UARTC;
+	output wire clock;
+	
 	wire [4:0] saida_regmux;	
 	wire [5:0] ALUCONTROL;	
 	//wire [9:0] saidaPC;
@@ -30,16 +43,23 @@ module core(clk_button, clock50M, reset, switches, unidade, dezena, centena, mil
 	//wire [31:0] bios_output;
 	wire [31:0] selected_instruction;
 	wire [31:0] rdata3;
-	output bios_select,  bios_reset;
-	wire write_hd; //bios_select,  bios_reset; //adicionados
+	//output bios_select,  bios_reset;
+	wire write_hd, bios_select,  bios_reset; //adicionados
 	wire intrpt;
-	output wire clock;
-	output wire stateOut;
-	output wire [31:0] bios_output;
+	//output wire clock;
+	//output wire stateOut;
+	wire stateOut;
+	/*output wire [31:0] bios_output;
 	output wire[9:0] outPC;
 	output wire[9:0] saidaPC;
 	output wire[6:0] unidade, dezena, centena,mil, milhao, bilhao, trilhao, quatrilhao;
-	output wire [31:0] Instruction;
+	output wire [31:0] Instruction;*/
+	
+	wire [31:0] bios_output;
+	output wire[9:0] outPC;
+	wire[9:0] saidaPC;
+	
+	//wire [31:0] Instruction;
 	
 	wire [31:0] hd_output, saida_mux_hd;
 	
@@ -51,24 +71,30 @@ module core(clk_button, clock50M, reset, switches, unidade, dezena, centena, mil
 	
 	wire [31:0] intrpt_val;
 	
-	output wire [9:0] only_proc_pc;
+	wire [9:0] only_proc_pc;
+	
+	//output wire [9:0] only_proc_pc;
 	
 	wire decoded_exec_proc, wrt_shft_enabler, rd_shft_enabler;
 	
-	output wire lcd_on,lcd_blon,lcd_rw,lcd_en,lcd_rs;
-	output wire [7:0] lcd_data;
+	//output wire lcd_on,lcd_blon,lcd_rw,lcd_en,lcd_rs;
+	//output wire [7:0] lcd_data;
 	
 	
-	DeBounce db(.clk(clock50M), 
+	/*DeBounce db(.clk(clock50M), 
 					 .n_reset(1'b1), 
 					 .button_in(clk_button), //dará o enter
-					 .DB_out(botaosaida));
+					 .DB_out(botaosaida)); */
 					 
 	Temporizador temp(.clock(clock50M), 
 							.clockT(clock));
 	
-	maquinaEstados estados(.clk(clock), 
+	/*maquinaEstados estados(.clk(clock), 
 								  .db_out(botaosaida), 
+								  .saida(botaoBom));*/
+								  
+	maquinaEstadosUART estados(.clk(clock), 
+								  .wb_flag(wb_flag), 
 								  .saida(botaoBom));
 								  
 	INTERRUPTION_MODULE int_module (.clock(clock), 
@@ -167,14 +193,16 @@ module core(clk_button, clock50M, reset, switches, unidade, dezena, centena, mil
 							  .chng_wrt_shft(chng_wrt_shft), //adicionado
 							  .chng_rd_shft(chng_rd_shft), //adicionado
 							  .change_proc_pc(change_proc_pc), //adicionado
-							  .save_proc_pc(save_proc_pc) //adicionado
-							  .rx_signal(rx_signal), //net lab
-							  .tx_signal(tx_signal)); //net lab
+							  .save_proc_pc(save_proc_pc), //adicionado
+							  .uartc(UARTC)); //net lab
 	
 	MUX_INPUT input_mux(.entrada1(selected_instruction[15:0]), 
 							  .entrada2(switches), 
 							  .sinal(inputMUX), 
-							  .saida(inmux_output));	
+							  .saida(inmux_output),
+							  .UART_in(UART_in), //net lab 
+							  .rx_signal(rx_signal) //net lab
+							  );	
 	
 					  
 	SE_16_32 extender_16_32(.sinal_entrada(inmux_output), 
@@ -237,10 +265,12 @@ module core(clk_button, clock50M, reset, switches, unidade, dezena, centena, mil
 					 .displayFlag(displayFlag),
 					 .readDataOut(rdataout),
 					 .clk_auto(clock50M),
-					 .shift_amount(shift_amount) //adicionado
+					 .shift_amount(shift_amount), //adicionado
+					 .UART_out(UART_out), //netlab
+					 .UARTC(UARTC) //net lab
 					 );
 					 
-	output_module(.entrada(display),
+	/*output_module(.entrada(display),
 					  .dunidade(unidade), 
 					  .ddezena(dezena), 
 					  .dcentena(centena),
@@ -248,7 +278,7 @@ module core(clk_button, clock50M, reset, switches, unidade, dezena, centena, mil
 					  .dmilhao(milhao), 
 					  .dbilhao(bilhao), 
 					  .dtrilhao(trilhao), 
-					  .dquatrilhao(quatrilhao));
+					  .dquatrilhao(quatrilhao));*/
 
 	
 	MUX_MEM mem_mux(.entrada1(resultado), 
@@ -275,7 +305,7 @@ module core(clk_button, clock50M, reset, switches, unidade, dezena, centena, mil
 						 .sinal(jrMUX), 
 						 .saida(entradaPC));
 						 
-	LCD DISP(.CLOCK_50(clock50M),
+	/*LCD DISP(.CLOCK_50(clock50M),
 				.SW(8'b0),
 				.LCD_ON(lcd_on),
 				.LCD_BLON(lcd_blon),
@@ -286,5 +316,25 @@ module core(clk_button, clock50M, reset, switches, unidade, dezena, centena, mil
 				.offset(rdata2[15:0]),
 				.lcd_trd_msg(lcd_trd_msg),
 				.clk_div(clock)
-	);
+	);*/
+	
+	/*UARTDecoder uart_dec(.rx_signal(rx_signal),
+								.tx_signal(tx_signal),
+								.baud_rate(baud_rate),
+								.UARTC(UARTC));*/
+								
+	/* UARTModule uart_module(.clock(clock),
+								  .physical_clock(clock50M),
+								  .init_flag(),
+								  .UART_ENB(),
+								  .instruction(UARTC),
+								  .write_value(), //similar to output, is tx
+								  .rx(),
+								  .tx(),
+								  .wb_flag(),
+								  .wb_data(), //similar to input
+								  .custom_uart_clock_out(),
+								  .read_state_out(),
+								  .sample_count()
+								  );*/
 endmodule 

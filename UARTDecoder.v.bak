@@ -1,0 +1,27 @@
+module UARTDecoder (
+	input rx_signal,
+	input tx_signal,
+	input baud_rate,
+	output [2:0] UARTC
+);
+
+always @(*) 
+	if (rx_signal) begin
+		UARTC = 3'b010;
+	end
+
+	if (tx_signal) begin
+		UARTC = 3'b011;
+	end
+
+	if (baud_rate) begin
+		UARTC = 3'b100;
+	end
+
+	else begin
+		UARTC = 3'b000;
+	end
+
+
+
+endmodule

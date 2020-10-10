@@ -1,29 +1,38 @@
 
-State Machine - |core|LCD:DISP|LCD_Display:u1|next_command
-Name next_command.DISPLAY_CLEAR next_command.DISPLAY_OFF next_command.RESET3 next_command.RESET2 next_command.RETURN_HOME next_command.LINE2 next_command.Print_String next_command.MODE_SET next_command.DISPLAY_ON next_command.FUNC_SET 
-next_command.FUNC_SET 0 0 0 0 0 0 0 0 0 0 
-next_command.DISPLAY_ON 0 0 0 0 0 0 0 0 1 1 
-next_command.MODE_SET 0 0 0 0 0 0 0 1 0 1 
-next_command.Print_String 0 0 0 0 0 0 1 0 0 1 
-next_command.LINE2 0 0 0 0 0 1 0 0 0 1 
-next_command.RETURN_HOME 0 0 0 0 1 0 0 0 0 1 
-next_command.RESET2 0 0 0 1 0 0 0 0 0 1 
-next_command.RESET3 0 0 1 0 0 0 0 0 0 1 
-next_command.DISPLAY_OFF 0 1 0 0 0 0 0 0 0 1 
-next_command.DISPLAY_CLEAR 1 0 0 0 0 0 0 0 0 1 
+State Machine - |top_level_arch|UARTModule:Module_B|RXSampler:sampler|sampling_state
+Name sampling_state.SAMPLE_STOP sampling_state.SAMPLE_FULL sampling_state.SAMPLE_HALF 
+sampling_state.SAMPLE_STOP 0 0 0 
+sampling_state.SAMPLE_HALF 1 0 1 
+sampling_state.SAMPLE_FULL 1 1 0 
 
-State Machine - |core|LCD:DISP|LCD_Display:u1|state
-Name state.DISPLAY_CLEAR state.DISPLAY_OFF state.RESET3 state.RESET2 state.HOLD state.DROP_LCD_E state.RETURN_HOME state.LINE2 state.Print_String state.MODE_SET state.DISPLAY_ON state.FUNC_SET state.RESET1 
-state.RESET1 0 0 0 0 0 0 0 0 0 0 0 0 0 
-state.FUNC_SET 0 0 0 0 0 0 0 0 0 0 0 1 1 
-state.DISPLAY_ON 0 0 0 0 0 0 0 0 0 0 1 0 1 
-state.MODE_SET 0 0 0 0 0 0 0 0 0 1 0 0 1 
-state.Print_String 0 0 0 0 0 0 0 0 1 0 0 0 1 
-state.LINE2 0 0 0 0 0 0 0 1 0 0 0 0 1 
-state.RETURN_HOME 0 0 0 0 0 0 1 0 0 0 0 0 1 
-state.DROP_LCD_E 0 0 0 0 0 1 0 0 0 0 0 0 1 
-state.HOLD 0 0 0 0 1 0 0 0 0 0 0 0 1 
-state.RESET2 0 0 0 1 0 0 0 0 0 0 0 0 1 
-state.RESET3 0 0 1 0 0 0 0 0 0 0 0 0 1 
-state.DISPLAY_OFF 0 1 0 0 0 0 0 0 0 0 0 0 1 
-state.DISPLAY_CLEAR 1 0 0 0 0 0 0 0 0 0 0 0 1 
+State Machine - |top_level_arch|UARTModule:Module_B|UARTController:controller|write_state
+Name write_state.IDLE write_state.PARITY write_state.WRITING 
+write_state.IDLE 0 0 0 
+write_state.WRITING 1 0 1 
+write_state.PARITY 1 1 0 
+
+State Machine - |top_level_arch|UARTModule:Module_B|UARTController:controller|read_state
+Name read_state.ENDING read_state.PARITY read_state.READING read_state.IDLE 
+read_state.IDLE 0 0 0 0 
+read_state.READING 0 0 1 1 
+read_state.PARITY 0 1 0 1 
+read_state.ENDING 1 0 0 1 
+
+State Machine - |top_level_arch|UARTModule:Module_A|RXSampler:sampler|sampling_state
+Name sampling_state.SAMPLE_STOP sampling_state.SAMPLE_FULL sampling_state.SAMPLE_HALF 
+sampling_state.SAMPLE_STOP 0 0 0 
+sampling_state.SAMPLE_HALF 1 0 1 
+sampling_state.SAMPLE_FULL 1 1 0 
+
+State Machine - |top_level_arch|UARTModule:Module_A|UARTController:controller|write_state
+Name write_state.IDLE write_state.PARITY write_state.WRITING 
+write_state.IDLE 0 0 0 
+write_state.WRITING 1 0 1 
+write_state.PARITY 1 1 0 
+
+State Machine - |top_level_arch|UARTModule:Module_A|UARTController:controller|read_state
+Name read_state.ENDING read_state.PARITY read_state.READING read_state.IDLE 
+read_state.IDLE 0 0 0 0 
+read_state.READING 0 0 1 1 
+read_state.PARITY 0 1 0 1 
+read_state.ENDING 1 0 0 1 

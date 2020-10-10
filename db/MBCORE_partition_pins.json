@@ -4,227 +4,275 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "unidade[0]",
+					"name" : "clock",
 					"strict" : false
 				},
 				{
-					"name" : "unidade[1]",
+					"name" : "UART_out[0]",
 					"strict" : false
 				},
 				{
-					"name" : "unidade[2]",
+					"name" : "UART_out[1]",
 					"strict" : false
 				},
 				{
-					"name" : "unidade[3]",
+					"name" : "UART_out[2]",
 					"strict" : false
 				},
 				{
-					"name" : "unidade[4]",
+					"name" : "UART_out[3]",
 					"strict" : false
 				},
 				{
-					"name" : "unidade[5]",
+					"name" : "UART_out[4]",
 					"strict" : false
 				},
 				{
-					"name" : "unidade[6]",
+					"name" : "UART_out[5]",
 					"strict" : false
 				},
 				{
-					"name" : "dezena[0]",
+					"name" : "UART_out[6]",
 					"strict" : false
 				},
 				{
-					"name" : "dezena[1]",
+					"name" : "UART_out[7]",
 					"strict" : false
 				},
 				{
-					"name" : "dezena[2]",
+					"name" : "UART_out[8]",
 					"strict" : false
 				},
 				{
-					"name" : "dezena[3]",
+					"name" : "UART_out[9]",
 					"strict" : false
 				},
 				{
-					"name" : "dezena[4]",
+					"name" : "UART_out[10]",
 					"strict" : false
 				},
 				{
-					"name" : "dezena[5]",
+					"name" : "UART_out[11]",
 					"strict" : false
 				},
 				{
-					"name" : "dezena[6]",
+					"name" : "UART_out[12]",
 					"strict" : false
 				},
 				{
-					"name" : "centena[0]",
+					"name" : "UART_out[13]",
 					"strict" : false
 				},
 				{
-					"name" : "centena[1]",
+					"name" : "UART_out[14]",
 					"strict" : false
 				},
 				{
-					"name" : "centena[2]",
+					"name" : "UART_out[15]",
 					"strict" : false
 				},
 				{
-					"name" : "centena[3]",
+					"name" : "UART_out[16]",
 					"strict" : false
 				},
 				{
-					"name" : "centena[4]",
+					"name" : "UART_out[17]",
 					"strict" : false
 				},
 				{
-					"name" : "centena[5]",
+					"name" : "UART_out[18]",
 					"strict" : false
 				},
 				{
-					"name" : "centena[6]",
+					"name" : "UART_out[19]",
 					"strict" : false
 				},
 				{
-					"name" : "mil[0]",
+					"name" : "UART_out[20]",
 					"strict" : false
 				},
 				{
-					"name" : "mil[1]",
+					"name" : "UART_out[21]",
 					"strict" : false
 				},
 				{
-					"name" : "mil[2]",
+					"name" : "UART_out[22]",
 					"strict" : false
 				},
 				{
-					"name" : "mil[3]",
+					"name" : "UART_out[23]",
 					"strict" : false
 				},
 				{
-					"name" : "mil[4]",
+					"name" : "UART_out[24]",
 					"strict" : false
 				},
 				{
-					"name" : "mil[5]",
+					"name" : "UART_out[25]",
 					"strict" : false
 				},
 				{
-					"name" : "mil[6]",
+					"name" : "UART_out[26]",
 					"strict" : false
 				},
 				{
-					"name" : "milhao[0]",
+					"name" : "UART_out[27]",
 					"strict" : false
 				},
 				{
-					"name" : "milhao[1]",
+					"name" : "UART_out[28]",
 					"strict" : false
 				},
 				{
-					"name" : "milhao[2]",
+					"name" : "UART_out[29]",
 					"strict" : false
 				},
 				{
-					"name" : "milhao[3]",
+					"name" : "UART_out[30]",
 					"strict" : false
 				},
 				{
-					"name" : "milhao[4]",
+					"name" : "UART_out[31]",
 					"strict" : false
 				},
 				{
-					"name" : "milhao[5]",
+					"name" : "UARTC[0]",
 					"strict" : false
 				},
 				{
-					"name" : "milhao[6]",
+					"name" : "UARTC[1]",
 					"strict" : false
 				},
 				{
-					"name" : "bilhao[0]",
+					"name" : "UARTC[2]",
 					"strict" : false
 				},
 				{
-					"name" : "bilhao[1]",
+					"name" : "rdata2[0]",
 					"strict" : false
 				},
 				{
-					"name" : "bilhao[2]",
+					"name" : "rdata2[1]",
 					"strict" : false
 				},
 				{
-					"name" : "bilhao[3]",
+					"name" : "rdata2[2]",
 					"strict" : false
 				},
 				{
-					"name" : "bilhao[4]",
+					"name" : "rdata2[3]",
 					"strict" : false
 				},
 				{
-					"name" : "bilhao[5]",
+					"name" : "rdata2[4]",
 					"strict" : false
 				},
 				{
-					"name" : "bilhao[6]",
+					"name" : "rdata2[5]",
 					"strict" : false
 				},
 				{
-					"name" : "trilhao[0]",
+					"name" : "rdata2[6]",
 					"strict" : false
 				},
 				{
-					"name" : "trilhao[1]",
+					"name" : "rdata2[7]",
 					"strict" : false
 				},
 				{
-					"name" : "trilhao[2]",
+					"name" : "rdata2[8]",
 					"strict" : false
 				},
 				{
-					"name" : "trilhao[3]",
+					"name" : "rdata2[9]",
 					"strict" : false
 				},
 				{
-					"name" : "trilhao[4]",
+					"name" : "rdata2[10]",
 					"strict" : false
 				},
 				{
-					"name" : "trilhao[5]",
+					"name" : "rdata2[11]",
 					"strict" : false
 				},
 				{
-					"name" : "trilhao[6]",
+					"name" : "rdata2[12]",
 					"strict" : false
 				},
 				{
-					"name" : "quatrilhao[0]",
+					"name" : "rdata2[13]",
 					"strict" : false
 				},
 				{
-					"name" : "quatrilhao[1]",
+					"name" : "rdata2[14]",
 					"strict" : false
 				},
 				{
-					"name" : "quatrilhao[2]",
+					"name" : "rdata2[15]",
 					"strict" : false
 				},
 				{
-					"name" : "quatrilhao[3]",
+					"name" : "rdata2[16]",
 					"strict" : false
 				},
 				{
-					"name" : "quatrilhao[4]",
+					"name" : "rdata2[17]",
 					"strict" : false
 				},
 				{
-					"name" : "quatrilhao[5]",
+					"name" : "rdata2[18]",
 					"strict" : false
 				},
 				{
-					"name" : "quatrilhao[6]",
+					"name" : "rdata2[19]",
+					"strict" : false
+				},
+				{
+					"name" : "rdata2[20]",
+					"strict" : false
+				},
+				{
+					"name" : "rdata2[21]",
+					"strict" : false
+				},
+				{
+					"name" : "rdata2[22]",
+					"strict" : false
+				},
+				{
+					"name" : "rdata2[23]",
+					"strict" : false
+				},
+				{
+					"name" : "rdata2[24]",
+					"strict" : false
+				},
+				{
+					"name" : "rdata2[25]",
+					"strict" : false
+				},
+				{
+					"name" : "rdata2[26]",
+					"strict" : false
+				},
+				{
+					"name" : "rdata2[27]",
+					"strict" : false
+				},
+				{
+					"name" : "rdata2[28]",
+					"strict" : false
+				},
+				{
+					"name" : "rdata2[29]",
+					"strict" : false
+				},
+				{
+					"name" : "rdata2[30]",
+					"strict" : false
+				},
+				{
+					"name" : "rdata2[31]",
 					"strict" : false
 				},
 				{
@@ -268,359 +316,191 @@
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[0]",
+					"name" : "display[0]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[1]",
+					"name" : "display[1]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[2]",
+					"name" : "display[2]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[3]",
+					"name" : "display[3]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[4]",
+					"name" : "display[4]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[5]",
+					"name" : "display[5]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[6]",
+					"name" : "display[6]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[7]",
+					"name" : "display[7]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[8]",
+					"name" : "display[8]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[9]",
+					"name" : "display[9]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[10]",
+					"name" : "display[10]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[11]",
+					"name" : "display[11]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[12]",
+					"name" : "display[12]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[13]",
+					"name" : "display[13]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[14]",
+					"name" : "display[14]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[15]",
+					"name" : "display[15]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[16]",
+					"name" : "display[16]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[17]",
+					"name" : "display[17]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[18]",
+					"name" : "display[18]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[19]",
+					"name" : "display[19]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[20]",
+					"name" : "display[20]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[21]",
+					"name" : "display[21]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[22]",
+					"name" : "display[22]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[23]",
+					"name" : "display[23]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[24]",
+					"name" : "display[24]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[25]",
+					"name" : "display[25]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[26]",
+					"name" : "display[26]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[27]",
+					"name" : "display[27]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[28]",
+					"name" : "display[28]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[29]",
+					"name" : "display[29]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[30]",
+					"name" : "display[30]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_output[31]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[0]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[1]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[2]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[3]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[4]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[5]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[6]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[7]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[8]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[9]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[10]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[11]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[12]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[13]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[14]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[15]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[16]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[17]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[18]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[19]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[20]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[21]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[22]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[23]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[24]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[25]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[26]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[27]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[28]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[29]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[30]",
-					"strict" : false
-				},
-				{
-					"name" : "Instruction[31]",
-					"strict" : false
-				},
-				{
-					"name" : "stateOut",
-					"strict" : false
-				},
-				{
-					"name" : "clock",
-					"strict" : false
-				},
-				{
-					"name" : "bios_reset",
-					"strict" : false
-				},
-				{
-					"name" : "lcd_en",
-					"strict" : false
-				},
-				{
-					"name" : "lcd_rs",
-					"strict" : false
-				},
-				{
-					"name" : "lcd_data[0]",
-					"strict" : false
-				},
-				{
-					"name" : "lcd_data[1]",
-					"strict" : false
-				},
-				{
-					"name" : "lcd_data[2]",
-					"strict" : false
-				},
-				{
-					"name" : "lcd_data[3]",
-					"strict" : false
-				},
-				{
-					"name" : "lcd_data[4]",
-					"strict" : false
-				},
-				{
-					"name" : "lcd_data[5]",
-					"strict" : false
-				},
-				{
-					"name" : "lcd_data[6]",
-					"strict" : false
-				},
-				{
-					"name" : "lcd_data[7]",
-					"strict" : false
-				},
-				{
-					"name" : "only_proc_pc[0]",
-					"strict" : false
-				},
-				{
-					"name" : "only_proc_pc[1]",
-					"strict" : false
-				},
-				{
-					"name" : "only_proc_pc[2]",
-					"strict" : false
-				},
-				{
-					"name" : "only_proc_pc[3]",
-					"strict" : false
-				},
-				{
-					"name" : "only_proc_pc[4]",
-					"strict" : false
-				},
-				{
-					"name" : "only_proc_pc[5]",
-					"strict" : false
-				},
-				{
-					"name" : "only_proc_pc[6]",
-					"strict" : false
-				},
-				{
-					"name" : "only_proc_pc[7]",
-					"strict" : false
-				},
-				{
-					"name" : "only_proc_pc[8]",
-					"strict" : false
-				},
-				{
-					"name" : "only_proc_pc[9]",
-					"strict" : false
-				},
-				{
-					"name" : "change_proc_pc",
+					"name" : "display[31]",
 					"strict" : false
 				},
 				{
 					"name" : "clock50M",
+					"strict" : false
+				},
+				{
+					"name" : "switches[15]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[14]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[13]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[12]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[11]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[10]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[9]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[8]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[7]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[6]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[5]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[4]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[3]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[2]",
 					"strict" : false
 				},
 				{
@@ -632,67 +512,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "switches[4]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[5]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[6]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[7]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[2]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[3]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[8]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[9]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[10]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[11]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[12]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[13]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[14]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[15]",
-					"strict" : false
-				},
-				{
 					"name" : "reset",
 					"strict" : false
 				},
 				{
-					"name" : "clk_button",
+					"name" : "wb_flag",
 					"strict" : false
 				}
 			]

@@ -21,8 +21,11 @@ module MUX_BIOS(mux_select, clk, rst, input_data_1, input_data_2, mux_output, st
 					case(input_data_1[31:26])
 						HALT: 
 							begin
-								state <= MEMORY;
-								rst <= 1'b1;
+								//do nothing for lsc cd
+								//state <= MEMORY;
+								//rst <= 1'b1;
+								state <= BIOS;
+								rst <= 1'b0;
 							end
 					default:	
 						begin

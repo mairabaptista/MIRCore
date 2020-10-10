@@ -137,6 +137,23 @@ set_location_assignment PIN_J19 -to outPC[3]
 set_location_assignment PIN_H19 -to outPC[2]
 set_location_assignment PIN_J17 -to outPC[1]
 set_location_assignment PIN_G17 -to outPC[0]
+set_location_assignment PIN_L6 -to lcd_blon
+set_location_assignment PIN_M5 -to lcd_data[7]
+set_location_assignment PIN_M3 -to lcd_data[6]
+set_location_assignment PIN_K2 -to lcd_data[5]
+set_location_assignment PIN_K1 -to lcd_data[4]
+set_location_assignment PIN_K7 -to lcd_data[3]
+set_location_assignment PIN_L2 -to lcd_data[2]
+set_location_assignment PIN_L1 -to lcd_data[1]
+set_location_assignment PIN_L3 -to lcd_data[0]
+set_location_assignment PIN_L4 -to lcd_en
+set_location_assignment PIN_L5 -to lcd_on
+set_location_assignment PIN_M2 -to lcd_rs
+set_location_assignment PIN_M1 -to lcd_rw
+set_global_assignment -name VERILOG_FILE uart/UARTModule.v
+set_global_assignment -name VERILOG_FILE uart/UARTController.v
+set_global_assignment -name VERILOG_FILE uart/UARTClockGenerator.v
+set_global_assignment -name VERILOG_FILE uart/RXSampler.v
 set_global_assignment -name VERILOG_FILE lcd/Reset_Delay.v
 set_global_assignment -name VERILOG_FILE lcd/LCD_display_string.v
 set_global_assignment -name VERILOG_FILE lcd/LCD_Display.v
@@ -170,23 +187,15 @@ set_global_assignment -name VERILOG_FILE HD.v
 set_global_assignment -name VERILOG_FILE INTERRUPTION_MODULE.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name VERILOG_FILE MUX_HD.v
-set_location_assignment PIN_L6 -to lcd_blon
-set_location_assignment PIN_M5 -to lcd_data[7]
-set_location_assignment PIN_M3 -to lcd_data[6]
-set_location_assignment PIN_K2 -to lcd_data[5]
-set_location_assignment PIN_K1 -to lcd_data[4]
-set_location_assignment PIN_K7 -to lcd_data[3]
-set_location_assignment PIN_L2 -to lcd_data[2]
-set_location_assignment PIN_L1 -to lcd_data[1]
-set_location_assignment PIN_L3 -to lcd_data[0]
-set_location_assignment PIN_L4 -to lcd_en
-set_location_assignment PIN_L5 -to lcd_on
-set_location_assignment PIN_M2 -to lcd_rs
-set_location_assignment PIN_M1 -to lcd_rw
 set_global_assignment -name VERILOG_FILE MEM_SHIFTER.v
 set_global_assignment -name VERILOG_FILE ADDRESS_SET.v
 set_global_assignment -name VERILOG_FILE PROCESS_DECODE.v
 set_global_assignment -name VERILOG_FILE PROCESS_KEEPER.v
+set_global_assignment -name VERILOG_FILE UARTDecoder.v
+set_global_assignment -name VERILOG_FILE top_level_arch.v
+set_global_assignment -name VERILOG_FILE maquinaEstadosUART.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

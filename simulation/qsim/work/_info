@@ -7,67 +7,109 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/home/maira/Documents/labSO1 (2)/MBCORE_restored/simulation/qsim
+d/home/maira/Documents/labSO1 (2)/MBCORE_restored/simulation/qsim
 vcore
-Z1 !s110 1576698082
+Z0 !s110 1602296558
 !i10b 1
-!s100 6dA[]ZU;7JD`C8b?2g>6?2
-IKi;mdW5kRP3F=UfG^7;9Z2
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-R0
-Z3 w1576698080
+!s100 P`=Ve?e3`gZ0VQ;:zi2?Y3
+Im86]RI:FAiZUT>^o[lSc10
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/maira/Documents/LAB REDES/TRABSON/mirCore/simulation/qsim
+Z3 w1602296556
 Z4 8MBCORE.vo
 Z5 FMBCORE.vo
-L0 31
-Z6 OV;L;10.5b;63
+Z6 L0 31
+Z7 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1576698081.000000
-Z8 !s107 MBCORE.vo|
-Z9 !s90 -work|work|MBCORE.vo|
+Z8 !s108 1602296557.000000
+Z9 !s107 MBCORE.vo|
+Z10 !s90 -work|work|MBCORE.vo|
 !i113 1
-Z10 o-work work
-Z11 tCvgOpt 0
+Z11 o-work work
+Z12 tCvgOpt 0
 vcore_vlg_vec_tst
-R1
-!i10b 1
-!s100 d@i:YU8Ejj<IohemVhPz<3
-IK[mWI`<=>[`^C4VkK1>^e0
-R2
 R0
-w1576698078
-8Waveform.vwf.vt
-FWaveform.vwf.vt
-L0 29
-R6
+!i10b 1
+!s100 olFgnTS:PN:dB[gCX^8L=3
+I0n78i?PWVDZM>_SLW7en=1
+R1
+R2
+w1602296554
+8Waveform2.vwf.vt
+FWaveform2.vwf.vt
+Z13 L0 29
+R7
 r1
 !s85 0
 31
-!s108 1576698082.000000
-!s107 Waveform.vwf.vt|
-!s90 -work|work|Waveform.vwf.vt|
+!s108 1602296558.000000
+!s107 Waveform2.vwf.vt|
+!s90 -work|work|Waveform2.vwf.vt|
 !i113 1
-R10
 R11
+R12
 vhard_block
-R1
-!i10b 1
-!s100 8TMdT;OjaQjS?_h9M<8CT0
-IFb6AKz]W]kV^maBHT9DNz1
-R2
 R0
+!i10b 1
+!s100 W`7lbo3G03iH:nY;K5IPg1
+IJR4P0FG@HD4JIiLE197S63
+R1
+R2
 R3
 R4
 R5
-L0 195796
-R6
+L0 169036
+R7
 r1
 !s85 0
 31
-R7
 R8
 R9
-!i113 1
 R10
+!i113 1
 R11
+R12
+vtop_level_arch
+Z14 !s110 1602290020
+!i10b 1
+!s100 KFL<[a6j8JVNn??0_Odz11
+ISHW7_?:oZfPf0BddniEX@2
+R1
+R2
+w1602290018
+R4
+R5
+R6
+R7
+r1
+!s85 0
+31
+!s108 1602290019.000000
+R9
+R10
+!i113 1
+R11
+R12
+vtop_level_arch_vlg_vec_tst
+R14
+!i10b 1
+!s100 O[`oPdbdL0CTZRI8G7Ydk0
+IiIUliD`32RcDcS75<kUb11
+R1
+R2
+w1602290015
+8Waveform1.vwf.vt
+FWaveform1.vwf.vt
+R13
+R7
+r1
+!s85 0
+31
+!s108 1602290020.000000
+!s107 Waveform1.vwf.vt|
+!s90 -work|work|Waveform1.vwf.vt|
+!i113 1
+R11
+R12
