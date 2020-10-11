@@ -359,10 +359,10 @@ module controlUnit(rdy,opcode, ALUMUX,
 							 uartc = 3'b011;
 							 regDest = 1'b0;
 							 regWrite = 1'b0;
-							 if(rdy) 
+							 /*if(rdy) 
 								  hlt = 1'b1;
 							 else
-								  hlt = 1'b0;                         
+								  hlt = 1'b0;  */                       
 						end
 					6'b101101: //baud
 						begin

@@ -8,8 +8,10 @@ module top_level_arch(clock_A, clock_B, physical_clock, init_flag, instruction_A
 	input clock_B, physical_clock, init_flag;
 	output wire clock_A;
 	
-	output wire [2:0] instruction_A, instruction_B;	
-	output wire [31:0] write_value_A, write_value_B;
+	input [2:0] instruction_B;	
+	input [31:0]write_value_B;
+	output wire [2:0] instruction_A;
+	output wire [31:0] write_value_A;
 	
 	output wb_flag_A, wb_flag_B;
 	output [7:0] wb_data_A, wb_data_B;
@@ -45,7 +47,7 @@ module top_level_arch(clock_A, clock_B, physical_clock, init_flag, instruction_A
 					.clock(clock_A), 
 					.UART_in(wb_data_A), 
 					.UART_out(write_value_A),
-					.wb_flag(wb_flag),
+					.wb_flag(wb_flag_A),
 					.UARTC(instruction_A),
 					.rdata2(rdata2), 
 					.outPC(outPC), 

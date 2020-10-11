@@ -93,9 +93,9 @@ module core(clock50M, reset, switches, clock, UART_in, UART_out, wb_flag, UARTC,
 								  .db_out(botaosaida), 
 								  .saida(botaoBom));*/
 								  
-	maquinaEstadosUART estados(.clk(clock), 
+	/*maquinaEstadosUART estados(.clk(clock), 
 								  .wb_flag(wb_flag), 
-								  .saida(botaoBom));
+								  .saida(botaoBom));*/
 								  
 	INTERRUPTION_MODULE int_module (.clock(clock), 
 											  .opcode(selected_instruction[31:26]), 
@@ -167,7 +167,7 @@ module core(clock50M, reset, switches, clock, UART_in, UART_out, wb_flag, UARTC,
 							.state(stateOut));
 	
 	controlUnit control(//.clk(clock), 
-							  .rdy(botaoBom),
+							  .rdy(wb_flag),
 							  .opcode(selected_instruction[31:26]),
 							  .ALUMUX(ALUMUX), 
 							  .regWrite(regWrite), 
@@ -201,7 +201,7 @@ module core(clock50M, reset, switches, clock, UART_in, UART_out, wb_flag, UARTC,
 							  .sinal(inputMUX), 
 							  .saida(inmux_output),
 							  .UART_in(UART_in), //net lab 
-							  .rx_signal(rx_signal) //net lab
+							  .uartc(UARTC) //net lab
 							  );	
 	
 					  

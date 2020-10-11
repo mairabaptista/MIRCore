@@ -4,147 +4,259 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "clock",
+					"name" : "clock_A",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[0]",
+					"name" : "instruction_A[0]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[1]",
+					"name" : "instruction_A[1]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[2]",
+					"name" : "instruction_A[2]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[3]",
+					"name" : "write_value_A[0]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[4]",
+					"name" : "write_value_A[1]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[5]",
+					"name" : "write_value_A[2]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[6]",
+					"name" : "write_value_A[3]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[7]",
+					"name" : "write_value_A[4]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[8]",
+					"name" : "write_value_A[5]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[9]",
+					"name" : "write_value_A[6]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[10]",
+					"name" : "write_value_A[7]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[11]",
+					"name" : "write_value_A[8]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[12]",
+					"name" : "write_value_A[9]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[13]",
+					"name" : "write_value_A[10]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[14]",
+					"name" : "write_value_A[11]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[15]",
+					"name" : "write_value_A[12]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[16]",
+					"name" : "write_value_A[13]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[17]",
+					"name" : "write_value_A[14]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[18]",
+					"name" : "write_value_A[15]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[19]",
+					"name" : "write_value_A[16]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[20]",
+					"name" : "write_value_A[17]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[21]",
+					"name" : "write_value_A[18]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[22]",
+					"name" : "write_value_A[19]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[23]",
+					"name" : "write_value_A[20]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[24]",
+					"name" : "write_value_A[21]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[25]",
+					"name" : "write_value_A[22]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[26]",
+					"name" : "write_value_A[23]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[27]",
+					"name" : "write_value_A[24]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[28]",
+					"name" : "write_value_A[25]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[29]",
+					"name" : "write_value_A[26]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[30]",
+					"name" : "write_value_A[27]",
 					"strict" : false
 				},
 				{
-					"name" : "UART_out[31]",
+					"name" : "write_value_A[28]",
 					"strict" : false
 				},
 				{
-					"name" : "UARTC[0]",
+					"name" : "write_value_A[29]",
 					"strict" : false
 				},
 				{
-					"name" : "UARTC[1]",
+					"name" : "write_value_A[30]",
 					"strict" : false
 				},
 				{
-					"name" : "UARTC[2]",
+					"name" : "write_value_A[31]",
+					"strict" : false
+				},
+				{
+					"name" : "wb_flag_A",
+					"strict" : false
+				},
+				{
+					"name" : "wb_data_A[0]",
+					"strict" : false
+				},
+				{
+					"name" : "wb_data_A[1]",
+					"strict" : false
+				},
+				{
+					"name" : "wb_data_A[2]",
+					"strict" : false
+				},
+				{
+					"name" : "wb_data_A[3]",
+					"strict" : false
+				},
+				{
+					"name" : "wb_data_A[4]",
+					"strict" : false
+				},
+				{
+					"name" : "wb_data_A[5]",
+					"strict" : false
+				},
+				{
+					"name" : "wb_data_A[6]",
+					"strict" : false
+				},
+				{
+					"name" : "wb_data_A[7]",
+					"strict" : false
+				},
+				{
+					"name" : "wb_flag_B",
+					"strict" : false
+				},
+				{
+					"name" : "wb_data_B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "wb_data_B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "wb_data_B[2]",
+					"strict" : false
+				},
+				{
+					"name" : "wb_data_B[3]",
+					"strict" : false
+				},
+				{
+					"name" : "wb_data_B[4]",
+					"strict" : false
+				},
+				{
+					"name" : "wb_data_B[5]",
+					"strict" : false
+				},
+				{
+					"name" : "wb_data_B[6]",
+					"strict" : false
+				},
+				{
+					"name" : "wb_data_B[7]",
+					"strict" : false
+				},
+				{
+					"name" : "rxA_to_txB_out",
+					"strict" : false
+				},
+				{
+					"name" : "rxB_to_txA_out",
+					"strict" : false
+				},
+				{
+					"name" : "uart_clock_A",
+					"strict" : false
+				},
+				{
+					"name" : "uart_clock_B",
+					"strict" : false
+				},
+				{
+					"name" : "read_state_B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "read_state_B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_count_B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_count_B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_count_B[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_count_B[3]",
 					"strict" : false
 				},
 				{
@@ -444,7 +556,159 @@
 					"strict" : false
 				},
 				{
-					"name" : "clock50M",
+					"name" : "physical_clock",
+					"strict" : false
+				},
+				{
+					"name" : "instruction_B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction_B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction_B[2]",
+					"strict" : false
+				},
+				{
+					"name" : "init_flag",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[2]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[10]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[11]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[12]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[28]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[29]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[31]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[30]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[25]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[26]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[27]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[22]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[24]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[23]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[19]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[20]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[21]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[17]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[18]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[16]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[13]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[14]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[15]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[7]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[8]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[9]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[4]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[5]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[6]",
+					"strict" : false
+				},
+				{
+					"name" : "write_value_B[3]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clock_B",
 					"strict" : false
 				},
 				{
@@ -509,14 +773,6 @@
 				},
 				{
 					"name" : "switches[0]",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
-					"strict" : false
-				},
-				{
-					"name" : "wb_flag",
 					"strict" : false
 				}
 			]

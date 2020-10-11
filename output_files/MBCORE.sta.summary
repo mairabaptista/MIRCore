@@ -2,76 +2,292 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'Temporizador:temp|clockT'
-Slack : -142.446
-TNS   : -296130.641
+Type  : Slow 1200mV 85C Model Setup 'physical_clock'
+Slack : -159.420
+TNS   : -21829.438
 
-Type  : Slow 1200mV 85C Model Setup 'clock50M'
-Slack : -142.113
-TNS   : -4939.901
+Type  : Slow 1200mV 85C Model Setup 'core:core_a|Temporizador:temp|clockT'
+Slack : -158.966
+TNS   : -347183.627
 
-Type  : Slow 1200mV 85C Model Hold 'Temporizador:temp|clockT'
+Type  : Slow 1200mV 85C Model Setup 'core:core_a|BIOS:bios|altsyncram:bios_rtl_0|altsyncram_ub61:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : -13.248
+TNS   : -178.750
+
+Type  : Slow 1200mV 85C Model Setup 'UARTModule:Module_A|UARTClockGenerator:clock_gen|custom_uart_clock'
+Slack : -8.026
+TNS   : -85.710
+
+Type  : Slow 1200mV 85C Model Setup 'UARTModule:Module_B|UARTClockGenerator:clock_gen|custom_uart_clock'
+Slack : -7.890
+TNS   : -76.047
+
+Type  : Slow 1200mV 85C Model Setup 'clock_B'
+Slack : -5.639
+TNS   : -3640.299
+
+Type  : Slow 1200mV 85C Model Setup 'UARTModule:Module_B|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : -2.935
+TNS   : -30.835
+
+Type  : Slow 1200mV 85C Model Setup 'UARTModule:Module_A|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : -1.936
+TNS   : -21.976
+
+Type  : Slow 1200mV 85C Model Hold 'core:core_a|BIOS:bios|altsyncram:bios_rtl_0|altsyncram_ub61:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : -3.334
+TNS   : -31.395
+
+Type  : Slow 1200mV 85C Model Hold 'core:core_a|Temporizador:temp|clockT'
+Slack : -0.153
+TNS   : -1.816
+
+Type  : Slow 1200mV 85C Model Hold 'UARTModule:Module_A|UARTClockGenerator:clock_gen|custom_uart_clock'
 Slack : 0.402
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'clock50M'
-Slack : 0.655
+Type  : Slow 1200mV 85C Model Hold 'physical_clock'
+Slack : 0.402
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock50M'
-Slack : -3.000
-TNS   : -302.690
+Type  : Slow 1200mV 85C Model Hold 'UARTModule:Module_A|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : 0.405
+TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Temporizador:temp|clockT'
+Type  : Slow 1200mV 85C Model Hold 'UARTModule:Module_B|UARTClockGenerator:clock_gen|custom_uart_clock'
+Slack : 0.405
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'UARTModule:Module_B|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : 0.406
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clock_B'
+Slack : 0.619
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_B'
+Slack : -3.000
+TNS   : -1339.523
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'physical_clock'
+Slack : -3.000
+TNS   : -567.769
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'core:core_a|Temporizador:temp|clockT'
 Slack : -2.693
-TNS   : -3178.812
+TNS   : -4528.923
 
-Type  : Slow 1200mV 0C Model Setup 'Temporizador:temp|clockT'
-Slack : -128.791
-TNS   : -267676.020
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UARTModule:Module_A|UARTClockGenerator:clock_gen|custom_uart_clock'
+Slack : -2.693
+TNS   : -49.199
 
-Type  : Slow 1200mV 0C Model Setup 'clock50M'
-Slack : -128.513
-TNS   : -4456.372
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UARTModule:Module_B|UARTClockGenerator:clock_gen|custom_uart_clock'
+Slack : -2.693
+TNS   : -49.199
 
-Type  : Slow 1200mV 0C Model Hold 'Temporizador:temp|clockT'
-Slack : 0.352
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UARTModule:Module_A|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : -1.285
+TNS   : -15.420
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UARTModule:Module_B|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : -1.285
+TNS   : -15.420
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'core:core_a|BIOS:bios|altsyncram:bios_rtl_0|altsyncram_ub61:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : 0.424
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'clock50M'
-Slack : 0.599
+Type  : Slow 1200mV 0C Model Setup 'physical_clock'
+Slack : -144.658
+TNS   : -19709.369
+
+Type  : Slow 1200mV 0C Model Setup 'core:core_a|Temporizador:temp|clockT'
+Slack : -144.240
+TNS   : -315422.071
+
+Type  : Slow 1200mV 0C Model Setup 'core:core_a|BIOS:bios|altsyncram:bios_rtl_0|altsyncram_ub61:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : -12.349
+TNS   : -166.732
+
+Type  : Slow 1200mV 0C Model Setup 'UARTModule:Module_A|UARTClockGenerator:clock_gen|custom_uart_clock'
+Slack : -7.274
+TNS   : -75.623
+
+Type  : Slow 1200mV 0C Model Setup 'UARTModule:Module_B|UARTClockGenerator:clock_gen|custom_uart_clock'
+Slack : -7.145
+TNS   : -66.607
+
+Type  : Slow 1200mV 0C Model Setup 'clock_B'
+Slack : -5.090
+TNS   : -3262.163
+
+Type  : Slow 1200mV 0C Model Setup 'UARTModule:Module_B|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : -2.648
+TNS   : -27.222
+
+Type  : Slow 1200mV 0C Model Setup 'UARTModule:Module_A|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : -1.649
+TNS   : -18.921
+
+Type  : Slow 1200mV 0C Model Hold 'core:core_a|BIOS:bios|altsyncram:bios_rtl_0|altsyncram_ub61:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : -3.176
+TNS   : -30.375
+
+Type  : Slow 1200mV 0C Model Hold 'core:core_a|Temporizador:temp|clockT'
+Slack : -0.076
+TNS   : -0.372
+
+Type  : Slow 1200mV 0C Model Hold 'physical_clock'
+Slack : 0.353
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock50M'
+Type  : Slow 1200mV 0C Model Hold 'UARTModule:Module_A|UARTClockGenerator:clock_gen|custom_uart_clock'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'UARTModule:Module_B|UARTClockGenerator:clock_gen|custom_uart_clock'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'UARTModule:Module_A|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'UARTModule:Module_B|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clock_B'
+Slack : 0.570
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_B'
 Slack : -3.000
-TNS   : -299.830
+TNS   : -1339.479
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Temporizador:temp|clockT'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'physical_clock'
+Slack : -3.000
+TNS   : -564.777
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'core:core_a|Temporizador:temp|clockT'
 Slack : -2.649
-TNS   : -3172.476
+TNS   : -4522.279
 
-Type  : Fast 1200mV 0C Model Setup 'Temporizador:temp|clockT'
-Slack : -70.382
-TNS   : -146117.050
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UARTModule:Module_A|UARTClockGenerator:clock_gen|custom_uart_clock'
+Slack : -2.649
+TNS   : -49.067
 
-Type  : Fast 1200mV 0C Model Setup 'clock50M'
-Slack : -70.088
-TNS   : -2377.667
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UARTModule:Module_B|UARTClockGenerator:clock_gen|custom_uart_clock'
+Slack : -2.649
+TNS   : -49.067
 
-Type  : Fast 1200mV 0C Model Hold 'Temporizador:temp|clockT'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UARTModule:Module_A|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : -1.285
+TNS   : -15.420
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UARTModule:Module_B|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : -1.285
+TNS   : -15.420
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'core:core_a|BIOS:bios|altsyncram:bios_rtl_0|altsyncram_ub61:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : 0.302
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'physical_clock'
+Slack : -79.493
+TNS   : -10674.645
+
+Type  : Fast 1200mV 0C Model Setup 'core:core_a|Temporizador:temp|clockT'
+Slack : -79.358
+TNS   : -172997.002
+
+Type  : Fast 1200mV 0C Model Setup 'core:core_a|BIOS:bios|altsyncram:bios_rtl_0|altsyncram_ub61:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : -6.507
+TNS   : -87.144
+
+Type  : Fast 1200mV 0C Model Setup 'UARTModule:Module_B|UARTClockGenerator:clock_gen|custom_uart_clock'
+Slack : -3.554
+TNS   : -21.654
+
+Type  : Fast 1200mV 0C Model Setup 'UARTModule:Module_A|UARTClockGenerator:clock_gen|custom_uart_clock'
+Slack : -3.534
+TNS   : -26.045
+
+Type  : Fast 1200mV 0C Model Setup 'clock_B'
+Slack : -2.264
+TNS   : -1276.650
+
+Type  : Fast 1200mV 0C Model Setup 'UARTModule:Module_B|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : -1.084
+TNS   : -10.414
+
+Type  : Fast 1200mV 0C Model Setup 'UARTModule:Module_A|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : -0.487
+TNS   : -5.147
+
+Type  : Fast 1200mV 0C Model Hold 'core:core_a|BIOS:bios|altsyncram:bios_rtl_0|altsyncram_ub61:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : -1.879
+TNS   : -18.289
+
+Type  : Fast 1200mV 0C Model Hold 'core:core_a|Temporizador:temp|clockT'
+Slack : -0.482
+TNS   : -1.059
+
+Type  : Fast 1200mV 0C Model Hold 'UARTModule:Module_A|UARTClockGenerator:clock_gen|custom_uart_clock'
 Slack : 0.181
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'clock50M'
-Slack : 0.247
+Type  : Fast 1200mV 0C Model Hold 'physical_clock'
+Slack : 0.181
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock50M'
-Slack : -3.000
-TNS   : -181.533
+Type  : Fast 1200mV 0C Model Hold 'UARTModule:Module_A|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : 0.183
+TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Temporizador:temp|clockT'
+Type  : Fast 1200mV 0C Model Hold 'UARTModule:Module_B|UARTClockGenerator:clock_gen|custom_uart_clock'
+Slack : 0.183
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'UARTModule:Module_B|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : 0.184
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock_B'
+Slack : 0.274
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_B'
+Slack : -3.000
+TNS   : -1147.058
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'physical_clock'
+Slack : -3.000
+TNS   : -395.126
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'core:core_a|Temporizador:temp|clockT'
 Slack : -1.000
-TNS   : -2316.000
+TNS   : -3359.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UARTModule:Module_A|UARTClockGenerator:clock_gen|custom_uart_clock'
+Slack : -1.000
+TNS   : -35.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UARTModule:Module_B|UARTClockGenerator:clock_gen|custom_uart_clock'
+Slack : -1.000
+TNS   : -35.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UARTModule:Module_A|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : -1.000
+TNS   : -12.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UARTModule:Module_B|UARTClockGenerator:clock_gen|sampling_clock'
+Slack : -1.000
+TNS   : -12.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'core:core_a|BIOS:bios|altsyncram:bios_rtl_0|altsyncram_ub61:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : 0.117
+TNS   : 0.000
 
 ------------------------------------------------------------
