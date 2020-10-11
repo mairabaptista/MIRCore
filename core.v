@@ -1,9 +1,10 @@
-module core(clock50M, reset, switches, clock, UART_in, UART_out, wb_flag, UARTC, rdata2, outPC, display); 
+module core(clock50M, reset, switches, clock, UART_in, UART_out, wb_flag, UARTC, rdata2, outPC, display, state); 
 			
 /* module core(clk_button, clock50M, reset, switches, unidade, dezena, centena, mil, milhao, bilhao, trilhao, quatrilhao, outPC,
 			bios_output, Instruction, stateOut, clock, bios_select,  bios_reset, saidaPC, lcd_on,lcd_blon,lcd_rw,lcd_en,lcd_rs, lcd_data,
 			only_proc_pc, change_proc_pc, UART_in, UART_out); */
 	input wb_flag;
+	output wire state;
 	//output UARTC;
 	input  reset, clock50M;	//clk_button,
 	wire /*clock,*/ botaosaida, botaoBom;
@@ -93,9 +94,10 @@ module core(clock50M, reset, switches, clock, UART_in, UART_out, wb_flag, UARTC,
 								  .db_out(botaosaida), 
 								  .saida(botaoBom));*/
 								  
-	/*maquinaEstadosUART estados(.clk(clock), 
+	maquinaEstadosUART estados(.clk(clock), 
 								  .wb_flag(wb_flag), 
-								  .saida(botaoBom));*/
+								  .saida(botaoBom),
+								  .state(state));
 								  
 	INTERRUPTION_MODULE int_module (.clock(clock), 
 											  .opcode(selected_instruction[31:26]), 
@@ -194,7 +196,8 @@ module core(clock50M, reset, switches, clock, UART_in, UART_out, wb_flag, UARTC,
 							  .chng_rd_shft(chng_rd_shft), //adicionado
 							  .change_proc_pc(change_proc_pc), //adicionado
 							  .save_proc_pc(save_proc_pc), //adicionado
-							  .uartc(UARTC)); //net lab
+							  .uartc(UARTC),
+							  .state(state)); //net lab
 	
 	MUX_INPUT input_mux(.entrada1(selected_instruction[15:0]), 
 							  .entrada2(switches), 

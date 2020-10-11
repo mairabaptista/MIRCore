@@ -260,6 +260,30 @@
 					"strict" : false
 				},
 				{
+					"name" : "read_state_A[0]",
+					"strict" : false
+				},
+				{
+					"name" : "read_state_A[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_count_A[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_count_A[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_count_A[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_count_A[3]",
+					"strict" : false
+				},
+				{
 					"name" : "rdata2[0]",
 					"strict" : false
 				},
@@ -553,6 +577,10 @@
 				},
 				{
 					"name" : "display[31]",
+					"strict" : false
+				},
+				{
+					"name" : "stateA",
 					"strict" : false
 				},
 				{

@@ -2,9 +2,9 @@ module controlUnit(rdy,opcode, ALUMUX,
 						regWrite, regDest, ALUControl, memWrite, 
 						memRead, memMUX, inputMUX, branch, jMUX, jrMUX, displayFlag, hlt, reset, jal, bios_select,
 						write_flag, write_os, mux_hd_control, lcd_trd_msg, proc_swap, chng_wrt_shft, chng_rd_shft,
-						change_proc_pc, save_proc_pc, uartc);
+						change_proc_pc, save_proc_pc, uartc, state);
 	
-	input rdy, reset;
+	input rdy, reset, state;
 	input [5:0]opcode;
 	output reg hlt;				//flags do pc
 	output reg branch;				//controle de branch
@@ -351,7 +351,7 @@ module controlUnit(rdy,opcode, ALUMUX,
 							 ALUMUX = 1'b1;
 							 if(rdy) 
 								  hlt = 1'b1;
-							 else
+							 if (rdy && !state)
 								  hlt = 1'b0;                             
 						end
 					6'b101110: //snd

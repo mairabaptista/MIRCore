@@ -1,8 +1,9 @@
-module maquinaEstadosUART( clk, wb_flag, saida );
+module maquinaEstadosUART( clk, wb_flag, saida, state );
 
 	input clk, wb_flag;
 	output reg saida;
-	reg state = 0;
+	output reg state = 0;
+	//state = 0;
 	
 	always @( posedge clk )
 	begin

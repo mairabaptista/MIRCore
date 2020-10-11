@@ -101,6 +101,12 @@ sample_count_B[0] << UARTModule:Module_B.sample_count
 sample_count_B[1] << UARTModule:Module_B.sample_count
 sample_count_B[2] << UARTModule:Module_B.sample_count
 sample_count_B[3] << UARTModule:Module_B.sample_count
+read_state_A[0] << UARTModule:Module_A.read_state_out
+read_state_A[1] << UARTModule:Module_A.read_state_out
+sample_count_A[0] << UARTModule:Module_A.sample_count
+sample_count_A[1] << UARTModule:Module_A.sample_count
+sample_count_A[2] << UARTModule:Module_A.sample_count
+sample_count_A[3] << UARTModule:Module_A.sample_count
 reset => reset.IN1
 switches[0] => switches[0].IN1
 switches[1] => switches[1].IN1
@@ -214,6 +220,7 @@ display[28] << core:core_a.display
 display[29] << core:core_a.display
 display[30] << core:core_a.display
 display[31] << core:core_a.display
+stateA << core:core_a.state
 
 
 |top_level_arch|UARTModule:Module_A
@@ -3885,7 +3892,7 @@ UART_out[28] <= DataMem:dmem.UART_out
 UART_out[29] <= DataMem:dmem.UART_out
 UART_out[30] <= DataMem:dmem.UART_out
 UART_out[31] <= DataMem:dmem.UART_out
-wb_flag => wb_flag.IN1
+wb_flag => wb_flag.IN2
 UARTC[0] <= UARTC[0].DB_MAX_OUTPUT_PORT_TYPE
 UARTC[1] <= UARTC[1].DB_MAX_OUTPUT_PORT_TYPE
 UARTC[2] <= UARTC[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -3963,6 +3970,7 @@ display[28] <= DataMem:dmem.display
 display[29] <= DataMem:dmem.display
 display[30] <= DataMem:dmem.display
 display[31] <= DataMem:dmem.display
+state <= state.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top_level_arch|core:core_a|Temporizador:temp
@@ -4000,6 +4008,16 @@ clock => count[30].CLK
 clock => count[31].CLK
 clock => clockT~reg0.CLK
 clockT <= clockT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_level_arch|core:core_a|maquinaEstadosUART:estados
+clk => state~reg0.CLK
+clk => saida~reg0.CLK
+wb_flag => state.OUTPUTSELECT
+wb_flag => saida.DATAB
+wb_flag => state.OUTPUTSELECT
+saida <= saida~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state <= state~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top_level_arch|core:core_a|INTERRUPTION_MODULE:int_module
@@ -5366,8 +5384,9 @@ state <= state~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top_level_arch|core:core_a|controlUnit:control
-rdy => Selector0.IN6
+rdy => always0.IN0
 rdy => Selector0.IN7
+rdy => hlt.DATAA
 opcode[0] => Decoder0.IN5
 opcode[1] => Decoder0.IN4
 opcode[2] => Decoder0.IN3
@@ -5407,6 +5426,7 @@ save_proc_pc <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
 uartc[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
 uartc[1] <= uartc.DB_MAX_OUTPUT_PORT_TYPE
 uartc[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+state => always0.IN1
 
 
 |top_level_arch|core:core_a|MUX_INPUT:input_mux

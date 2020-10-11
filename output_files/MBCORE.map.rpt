@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MBCORE
-Sat Oct 10 23:43:08 2020
+Sun Oct 11 12:49:18 2020
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -75,13 +75,14 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
  67. Port Connectivity Checks: "core:core_a|InstructionMem:instmem"
  68. Port Connectivity Checks: "core:core_a|BIOS:bios"
  69. Port Connectivity Checks: "core:core_a|pc:PC"
- 70. Port Connectivity Checks: "core:core_a"
- 71. Port Connectivity Checks: "UARTModule:Module_A|RXSampler:sampler"
- 72. Port Connectivity Checks: "UARTModule:Module_A"
- 73. Post-Synthesis Netlist Statistics for Top Partition
- 74. Elapsed Time Per Partition
- 75. Analysis & Synthesis Messages
- 76. Analysis & Synthesis Suppressed Messages
+ 70. Port Connectivity Checks: "core:core_a|maquinaEstadosUART:estados"
+ 71. Port Connectivity Checks: "core:core_a"
+ 72. Port Connectivity Checks: "UARTModule:Module_A|RXSampler:sampler"
+ 73. Port Connectivity Checks: "UARTModule:Module_A"
+ 74. Post-Synthesis Netlist Statistics for Top Partition
+ 75. Elapsed Time Per Partition
+ 76. Analysis & Synthesis Messages
+ 77. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -107,16 +108,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Oct 10 23:43:08 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sun Oct 11 12:49:18 2020       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; MBCORE                                      ;
 ; Top-level Entity Name              ; top_level_arch                              ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 13,852                                      ;
-;     Total combinational functions  ; 9,786                                       ;
-;     Dedicated logic registers      ; 4,631                                       ;
-; Total registers                    ; 4631                                        ;
-; Total pins                         ; 215                                         ;
+; Total logic elements               ; 13,853                                      ;
+;     Total combinational functions  ; 9,787                                       ;
+;     Dedicated logic registers      ; 4,632                                       ;
+; Total registers                    ; 4632                                        ;
+; Total pins                         ; 222                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 462,912                                     ;
 ; Embedded Multiplier 9-bit elements ; 2                                           ;
@@ -229,7 +230,7 @@ refer to the applicable agreement for further details.
 ;     Processor 5            ;   0.2%      ;
 ;     Processor 6            ;   0.2%      ;
 ;     Processor 7            ;   0.2%      ;
-;     Processor 8            ;   0.2%      ;
+;     Processor 8            ;   0.1%      ;
 ;     Processors 9-12        ;   0.1%      ;
 +----------------------------+-------------+
 
@@ -271,6 +272,7 @@ refer to the applicable agreement for further details.
 ; PROCESS_DECODE.v                               ; yes             ; User Verilog HDL File                                 ; D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/PROCESS_DECODE.v                               ;         ;
 ; PROCESS_KEEPER.v                               ; yes             ; User Verilog HDL File                                 ; D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/PROCESS_KEEPER.v                               ;         ;
 ; top_level_arch.v                               ; yes             ; User Verilog HDL File                                 ; D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/top_level_arch.v                               ;         ;
+; maquinaEstadosUART.v                           ; yes             ; User Verilog HDL File                                 ; D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/maquinaEstadosUART.v                           ;         ;
 ; altsyncram.tdf                                 ; yes             ; Megafunction                                          ; d:/maira/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf                      ;         ;
 ; stratix_ram_block.inc                          ; yes             ; Megafunction                                          ; d:/maira/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_ram_block.inc               ;         ;
 ; lpm_mux.inc                                    ; yes             ; Megafunction                                          ; d:/maira/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.inc                         ;         ;
@@ -282,7 +284,7 @@ refer to the applicable agreement for further details.
 ; altdpram.inc                                   ; yes             ; Megafunction                                          ; d:/maira/intelfpga_lite/17.1/quartus/libraries/megafunctions/altdpram.inc                        ;         ;
 ; db/altsyncram_k8d1.tdf                         ; yes             ; Auto-Generated Megafunction                           ; D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/db/altsyncram_k8d1.tdf                         ;         ;
 ; db/altsyncram_ub61.tdf                         ; yes             ; Auto-Generated Megafunction                           ; D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/db/altsyncram_ub61.tdf                         ;         ;
-; db/mbcore.ram0_bios_23f85c.hdl.mif             ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/db/mbcore.ram0_bios_23f85c.hdl.mif             ;         ;
+; db/MBCORE.ram0_BIOS_23f85c.hdl.mif             ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/db/MBCORE.ram0_BIOS_23f85c.hdl.mif             ;         ;
 ; db/altsyncram_39i1.tdf                         ; yes             ; Auto-Generated Megafunction                           ; D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/db/altsyncram_39i1.tdf                         ;         ;
 ; db/mbcore.ram0_uartcontroller_34878c75.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/db/mbcore.ram0_uartcontroller_34878c75.hdl.mif ;         ;
 ; db/altsyncram_g9d1.tdf                         ; yes             ; Auto-Generated Megafunction                           ; D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/db/altsyncram_g9d1.tdf                         ;         ;
@@ -314,30 +316,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------------------------------+
 ; Resource                                    ; Usage                                ;
 +---------------------------------------------+--------------------------------------+
-; Estimated Total logic elements              ; 13,852                               ;
+; Estimated Total logic elements              ; 13,853                               ;
 ;                                             ;                                      ;
-; Total combinational functions               ; 9786                                 ;
+; Total combinational functions               ; 9787                                 ;
 ; Logic element usage by number of LUT inputs ;                                      ;
-;     -- 4 input functions                    ; 5272                                 ;
-;     -- 3 input functions                    ; 3761                                 ;
-;     -- <=2 input functions                  ; 753                                  ;
+;     -- 4 input functions                    ; 5269                                 ;
+;     -- 3 input functions                    ; 3763                                 ;
+;     -- <=2 input functions                  ; 755                                  ;
 ;                                             ;                                      ;
 ; Logic elements by mode                      ;                                      ;
-;     -- normal mode                          ; 7637                                 ;
+;     -- normal mode                          ; 7638                                 ;
 ;     -- arithmetic mode                      ; 2149                                 ;
 ;                                             ;                                      ;
-; Total registers                             ; 4631                                 ;
-;     -- Dedicated logic registers            ; 4631                                 ;
+; Total registers                             ; 4632                                 ;
+;     -- Dedicated logic registers            ; 4632                                 ;
 ;     -- I/O registers                        ; 0                                    ;
 ;                                             ;                                      ;
-; I/O pins                                    ; 215                                  ;
+; I/O pins                                    ; 222                                  ;
 ; Total memory bits                           ; 462912                               ;
 ;                                             ;                                      ;
 ; Embedded Multiplier 9-bit elements          ; 2                                    ;
 ;                                             ;                                      ;
 ; Maximum fan-out node                        ; core:core_a|Temporizador:temp|clockT ;
-; Maximum fan-out                             ; 3307                                 ;
-; Total fan-out                               ; 50417                                ;
+; Maximum fan-out                             ; 3308                                 ;
+; Total fan-out                               ; 50430                                ;
 ; Average fan-out                             ; 3.36                                 ;
 +---------------------------------------------+--------------------------------------+
 
@@ -347,33 +349,33 @@ refer to the applicable agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                              ; Entity Name         ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |top_level_arch                              ; 9786 (1)            ; 4631 (0)                  ; 462912      ; 2            ; 0       ; 1         ; 215  ; 0            ; |top_level_arch                                                                                                                                                  ; top_level_arch      ; work         ;
-;    |UARTModule:Module_A|                     ; 2257 (0)            ; 1182 (0)                  ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_A                                                                                                                              ; UARTModule          ; work         ;
-;       |RXSampler:sampler|                    ; 33 (33)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_A|RXSampler:sampler                                                                                                            ; RXSampler           ; work         ;
+; |top_level_arch                              ; 9787 (1)            ; 4632 (0)                  ; 462912      ; 2            ; 0       ; 1         ; 222  ; 0            ; |top_level_arch                                                                                                                                                  ; top_level_arch      ; work         ;
+;    |UARTModule:Module_A|                     ; 2259 (0)            ; 1182 (0)                  ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_A                                                                                                                              ; UARTModule          ; work         ;
+;       |RXSampler:sampler|                    ; 34 (34)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_A|RXSampler:sampler                                                                                                            ; RXSampler           ; work         ;
 ;       |UARTClockGenerator:clock_gen|         ; 1278 (190)          ; 91 (91)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_A|UARTClockGenerator:clock_gen                                                                                                 ; UARTClockGenerator  ; work         ;
 ;          |lpm_divide:Div0|                   ; 1088 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_A|UARTClockGenerator:clock_gen|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
 ;             |lpm_divide_gkm:auto_generated|  ; 1088 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_A|UARTClockGenerator:clock_gen|lpm_divide:Div0|lpm_divide_gkm:auto_generated                                                   ; lpm_divide_gkm      ; work         ;
 ;                |sign_div_unsign_9nh:divider| ; 1088 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_A|UARTClockGenerator:clock_gen|lpm_divide:Div0|lpm_divide_gkm:auto_generated|sign_div_unsign_9nh:divider                       ; sign_div_unsign_9nh ; work         ;
 ;                   |alt_u_div_6af:divider|    ; 1088 (1088)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_A|UARTClockGenerator:clock_gen|lpm_divide:Div0|lpm_divide_gkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider ; alt_u_div_6af       ; work         ;
-;       |UARTController:controller|            ; 946 (946)           ; 1079 (1079)               ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_A|UARTController:controller                                                                                                    ; UARTController      ; work         ;
+;       |UARTController:controller|            ; 947 (947)           ; 1079 (1079)               ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_A|UARTController:controller                                                                                                    ; UARTController      ; work         ;
 ;          |altsyncram:buffer_rtl_0|           ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_A|UARTController:controller|altsyncram:buffer_rtl_0                                                                            ; altsyncram          ; work         ;
 ;             |altsyncram_39i1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_A|UARTController:controller|altsyncram:buffer_rtl_0|altsyncram_39i1:auto_generated                                             ; altsyncram_39i1     ; work         ;
-;    |UARTModule:Module_B|                     ; 2269 (0)            ; 1182 (0)                  ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_B                                                                                                                              ; UARTModule          ; work         ;
+;    |UARTModule:Module_B|                     ; 2267 (0)            ; 1182 (0)                  ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_B                                                                                                                              ; UARTModule          ; work         ;
 ;       |RXSampler:sampler|                    ; 33 (33)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_B|RXSampler:sampler                                                                                                            ; RXSampler           ; work         ;
 ;       |UARTClockGenerator:clock_gen|         ; 1277 (189)          ; 91 (91)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_B|UARTClockGenerator:clock_gen                                                                                                 ; UARTClockGenerator  ; work         ;
 ;          |lpm_divide:Div0|                   ; 1088 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_B|UARTClockGenerator:clock_gen|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
 ;             |lpm_divide_gkm:auto_generated|  ; 1088 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_B|UARTClockGenerator:clock_gen|lpm_divide:Div0|lpm_divide_gkm:auto_generated                                                   ; lpm_divide_gkm      ; work         ;
 ;                |sign_div_unsign_9nh:divider| ; 1088 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_B|UARTClockGenerator:clock_gen|lpm_divide:Div0|lpm_divide_gkm:auto_generated|sign_div_unsign_9nh:divider                       ; sign_div_unsign_9nh ; work         ;
 ;                   |alt_u_div_6af:divider|    ; 1088 (1088)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_B|UARTClockGenerator:clock_gen|lpm_divide:Div0|lpm_divide_gkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider ; alt_u_div_6af       ; work         ;
-;       |UARTController:controller|            ; 959 (959)           ; 1079 (1079)               ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_B|UARTController:controller                                                                                                    ; UARTController      ; work         ;
+;       |UARTController:controller|            ; 957 (957)           ; 1079 (1079)               ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_B|UARTController:controller                                                                                                    ; UARTController      ; work         ;
 ;          |altsyncram:buffer_rtl_0|           ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_B|UARTController:controller|altsyncram:buffer_rtl_0                                                                            ; altsyncram          ; work         ;
 ;             |altsyncram_39i1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|UARTModule:Module_B|UARTController:controller|altsyncram:buffer_rtl_0|altsyncram_39i1:auto_generated                                             ; altsyncram_39i1     ; work         ;
-;    |core:core_a|                             ; 5259 (0)            ; 2267 (0)                  ; 460864      ; 2            ; 0       ; 1         ; 0    ; 0            ; |top_level_arch|core:core_a                                                                                                                                      ; core                ; work         ;
+;    |core:core_a|                             ; 5260 (0)            ; 2268 (0)                  ; 460864      ; 2            ; 0       ; 1         ; 0    ; 0            ; |top_level_arch|core:core_a                                                                                                                                      ; core                ; work         ;
 ;       |ADDRESS_SET:address_set|              ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|ADDRESS_SET:address_set                                                                                                              ; ADDRESS_SET         ; work         ;
 ;       |BIOS:bios|                            ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|BIOS:bios                                                                                                                            ; BIOS                ; work         ;
 ;          |altsyncram:bios_rtl_0|             ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|BIOS:bios|altsyncram:bios_rtl_0                                                                                                      ; altsyncram          ; work         ;
 ;             |altsyncram_ub61:auto_generated| ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|BIOS:bios|altsyncram:bios_rtl_0|altsyncram_ub61:auto_generated                                                                       ; altsyncram_ub61     ; work         ;
-;       |BancoREG:breg|                        ; 2561 (2561)         ; 2048 (2048)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|BancoREG:breg                                                                                                                        ; BancoREG            ; work         ;
+;       |BancoREG:breg|                        ; 2559 (2559)         ; 2048 (2048)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|BancoREG:breg                                                                                                                        ; BancoREG            ; work         ;
 ;       |DataMem:dmem|                         ; 5 (5)               ; 128 (128)                 ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|DataMem:dmem                                                                                                                         ; DataMem             ; work         ;
 ;          |altsyncram:MEMORIA_rtl_0|          ; 0 (0)               ; 0 (0)                     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|DataMem:dmem|altsyncram:MEMORIA_rtl_0                                                                                                ; altsyncram          ; work         ;
 ;             |altsyncram_g9d1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|DataMem:dmem|altsyncram:MEMORIA_rtl_0|altsyncram_g9d1:auto_generated                                                                 ; altsyncram_g9d1     ; work         ;
@@ -388,7 +390,7 @@ refer to the applicable agreement for further details.
 ;             |altsyncram_k8d1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32800       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|InstructionMem:instmem|altsyncram:ROM_PROC_rtl_0|altsyncram_k8d1:auto_generated                                                      ; altsyncram_k8d1     ; work         ;
 ;       |MUX_ALU:mux_alu|                      ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|MUX_ALU:mux_alu                                                                                                                      ; MUX_ALU             ; work         ;
 ;       |MUX_BIOS:mux_bios|                    ; 64 (64)             ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|MUX_BIOS:mux_bios                                                                                                                    ; MUX_BIOS            ; work         ;
-;       |MUX_HD:mux_hd|                        ; 333 (333)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|MUX_HD:mux_hd                                                                                                                        ; MUX_HD              ; work         ;
+;       |MUX_HD:mux_hd|                        ; 335 (335)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|MUX_HD:mux_hd                                                                                                                        ; MUX_HD              ; work         ;
 ;       |MUX_INPUT:input_mux|                  ; 44 (44)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|MUX_INPUT:input_mux                                                                                                                  ; MUX_INPUT           ; work         ;
 ;       |MUX_JR:jr_mux|                        ; 25 (25)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|MUX_JR:jr_mux                                                                                                                        ; MUX_JR              ; work         ;
 ;       |MUX_PRE_JUMP:pre_jump_mux|            ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|MUX_PRE_JUMP:pre_jump_mux                                                                                                            ; MUX_PRE_JUMP        ; work         ;
@@ -410,6 +412,7 @@ refer to the applicable agreement for further details.
 ;          |lpm_mult:Mult0|                    ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top_level_arch|core:core_a|alu:ula|lpm_mult:Mult0                                                                                                               ; lpm_mult            ; work         ;
 ;             |mult_7dt:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top_level_arch|core:core_a|alu:ula|lpm_mult:Mult0|mult_7dt:auto_generated                                                                                       ; mult_7dt            ; work         ;
 ;       |controlUnit:control|                  ; 57 (57)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|controlUnit:control                                                                                                                  ; controlUnit         ; work         ;
+;       |maquinaEstadosUART:estados|           ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|maquinaEstadosUART:estados                                                                                                           ; maquinaEstadosUART  ; work         ;
 ;       |pc:PC|                                ; 33 (33)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_arch|core:core_a|pc:PC                                                                                                                                ; pc                  ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -588,7 +591,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4631  ;
+; Total registers                              ; 4632  ;
 ; Number of registers using Synchronous Clear  ; 8     ;
 ; Number of registers using Synchronous Load   ; 18    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -629,40 +632,40 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
-; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |top_level_arch|core:core_a|BancoREG:breg|registradores[31][26]                   ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |top_level_arch|core:core_a|BancoREG:breg|registradores[31][8]                    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top_level_arch|core:core_a|PROCESS_KEEPER:keeper|proc_num[29]                    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top_level_arch|core:core_a|BancoREG:breg|registradores[0][5]                     ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top_level_arch|core:core_a|pc:PC|pc_os[7]                                        ;
+; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |top_level_arch|core:core_a|BancoREG:breg|registradores[31][13]                   ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |top_level_arch|core:core_a|BancoREG:breg|registradores[31][3]                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top_level_arch|core:core_a|PROCESS_KEEPER:keeper|proc_num[6]                     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top_level_arch|core:core_a|BancoREG:breg|registradores[0][0]                     ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top_level_arch|core:core_a|pc:PC|pc_os[9]                                        ;
 ; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |top_level_arch|UARTModule:Module_A|UARTController:controller|wb_data[5]          ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |top_level_arch|UARTModule:Module_B|UARTController:controller|wb_data[3]          ;
-; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |top_level_arch|core:core_a|BancoREG:breg|registradores[2][23]                    ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |top_level_arch|core:core_a|BancoREG:breg|registradores[2][2]                     ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |top_level_arch|core:core_a|BancoREG:breg|registradores[2][0]                     ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |top_level_arch|core:core_a|pc:PC|pc_proc[8]                                      ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_level_arch|UARTModule:Module_B|RXSampler:sampler|bit_count[0]                ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_level_arch|UARTModule:Module_A|RXSampler:sampler|bit_count[0]                ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_level_arch|UARTModule:Module_B|RXSampler:sampler|sampling_counter[0]         ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_level_arch|UARTModule:Module_A|RXSampler:sampler|sampling_counter[1]         ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |top_level_arch|core:core_a|MUX_BIOS:mux_bios|mux_output[14]                      ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |top_level_arch|UARTModule:Module_B|UARTController:controller|wb_data[6]          ;
+; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |top_level_arch|core:core_a|BancoREG:breg|registradores[2][20]                    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |top_level_arch|core:core_a|BancoREG:breg|registradores[2][3]                     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |top_level_arch|core:core_a|BancoREG:breg|registradores[2][1]                     ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |top_level_arch|core:core_a|pc:PC|pc_proc[7]                                      ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_level_arch|UARTModule:Module_B|RXSampler:sampler|bit_count[1]                ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_level_arch|UARTModule:Module_A|RXSampler:sampler|bit_count[2]                ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_level_arch|UARTModule:Module_B|RXSampler:sampler|sampling_counter[3]         ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_level_arch|UARTModule:Module_A|RXSampler:sampler|sampling_counter[0]         ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |top_level_arch|core:core_a|MUX_BIOS:mux_bios|mux_output[1]                       ;
 ; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; No         ; |top_level_arch|core:core_a|MUX_HD:mux_hd|saida[10]                               ;
 ; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |top_level_arch|core:core_a|MUX_INPUT:input_mux|saida[12]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |top_level_arch|core:core_a|MUX_INPUT:input_mux|saida[7]                          ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |top_level_arch|UARTModule:Module_A|UARTClockGenerator:clock_gen|desired_baudrate ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |top_level_arch|UARTModule:Module_B|UARTClockGenerator:clock_gen|desired_baudrate ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |top_level_arch|core:core_a|MUX_JR:jr_mux|saida[9]                                ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |top_level_arch|core:core_a|MUX_JR:jr_mux|saida[3]                                ;
 ; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |top_level_arch|core:core_a|BancoREG:breg|Mux33                                   ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |top_level_arch|core:core_a|BancoREG:breg|Mux20                                   ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |top_level_arch|core:core_a|BancoREG:breg|Mux18                                   ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |top_level_arch|UARTModule:Module_B|RXSampler:sampler|Selector6                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |top_level_arch|UARTModule:Module_A|RXSampler:sampler|Selector6                   ;
-; 67:1               ; 5 bits    ; 220 LEs       ; 60 LEs               ; 160 LEs                ; No         ; |top_level_arch|core:core_a|alu:ula|Mux20                                         ;
-; 68:1               ; 4 bits    ; 180 LEs       ; 48 LEs               ; 132 LEs                ; No         ; |top_level_arch|core:core_a|alu:ula|Mux24                                         ;
-; 69:1               ; 3 bits    ; 138 LEs       ; 39 LEs               ; 99 LEs                 ; No         ; |top_level_arch|core:core_a|MUX_HD:mux_hd|saida[13]                               ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |top_level_arch|UARTModule:Module_A|RXSampler:sampler|Selector5                   ;
+; 67:1               ; 5 bits    ; 220 LEs       ; 60 LEs               ; 160 LEs                ; No         ; |top_level_arch|core:core_a|alu:ula|Mux19                                         ;
+; 68:1               ; 4 bits    ; 180 LEs       ; 48 LEs               ; 132 LEs                ; No         ; |top_level_arch|core:core_a|alu:ula|Mux26                                         ;
+; 69:1               ; 3 bits    ; 138 LEs       ; 39 LEs               ; 99 LEs                 ; No         ; |top_level_arch|core:core_a|MUX_HD:mux_hd|saida[15]                               ;
 ; 69:1               ; 2 bits    ; 92 LEs        ; 28 LEs               ; 64 LEs                 ; No         ; |top_level_arch|core:core_a|alu:ula|Mux28                                         ;
-; 69:1               ; 8 bits    ; 368 LEs       ; 96 LEs               ; 272 LEs                ; No         ; |top_level_arch|core:core_a|MUX_HD:mux_hd|saida[23]                               ;
+; 69:1               ; 8 bits    ; 368 LEs       ; 96 LEs               ; 272 LEs                ; No         ; |top_level_arch|core:core_a|MUX_HD:mux_hd|saida[20]                               ;
 ; 70:1               ; 4 bits    ; 184 LEs       ; 52 LEs               ; 132 LEs                ; No         ; |top_level_arch|core:core_a|MUX_HD:mux_hd|saida[27]                               ;
-; 71:1               ; 2 bits    ; 94 LEs        ; 28 LEs               ; 66 LEs                 ; No         ; |top_level_arch|core:core_a|MUX_HD:mux_hd|saida[29]                               ;
-; 72:1               ; 2 bits    ; 96 LEs        ; 28 LEs               ; 68 LEs                 ; No         ; |top_level_arch|core:core_a|MUX_HD:mux_hd|saida[30]                               ;
+; 71:1               ; 2 bits    ; 94 LEs        ; 28 LEs               ; 66 LEs                 ; No         ; |top_level_arch|core:core_a|MUX_HD:mux_hd|saida[28]                               ;
+; 72:1               ; 2 bits    ; 96 LEs        ; 28 LEs               ; 68 LEs                 ; No         ; |top_level_arch|core:core_a|MUX_HD:mux_hd|saida[31]                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
 
 
@@ -1669,6 +1672,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "core:core_a|maquinaEstadosUART:estados"                                              ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; saida ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "core:core_a"                                                                                                                                                                ;
 +---------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1688,15 +1700,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "UARTModule:Module_A"                                                                                               ;
-+----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port           ; Type   ; Severity ; Details                                                                                                  ;
-+----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; UART_ENB       ; Input  ; Info     ; Stuck at VCC                                                                                             ;
-; read_state_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; sample_count   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+
+; Port Connectivity Checks: "UARTModule:Module_A" ;
++----------+-------+----------+-------------------+
+; Port     ; Type  ; Severity ; Details           ;
++----------+-------+----------+-------------------+
+; UART_ENB ; Input ; Info     ; Stuck at VCC      ;
++----------+-------+----------+-------------------+
 
 
 +-----------------------------------------------------+
@@ -1704,30 +1714,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 215                         ;
-; cycloneiii_ff         ; 4631                        ;
+; boundary_port         ; 222                         ;
+; cycloneiii_ff         ; 4632                        ;
 ;     ENA               ; 4177                        ;
 ;     ENA SLD           ; 11                          ;
 ;     SCLR              ; 2                           ;
 ;     SCLR SLD          ; 6                           ;
 ;     SLD               ; 1                           ;
-;     plain             ; 434                         ;
-; cycloneiii_lcell_comb ; 9790                        ;
+;     plain             ; 435                         ;
+; cycloneiii_lcell_comb ; 9793                        ;
 ;     arith             ; 2149                        ;
 ;         2 data inputs ; 131                         ;
 ;         3 data inputs ; 2018                        ;
-;     normal            ; 7641                        ;
+;     normal            ; 7644                        ;
 ;         0 data inputs ; 110                         ;
-;         1 data inputs ; 13                          ;
-;         2 data inputs ; 503                         ;
-;         3 data inputs ; 1743                        ;
-;         4 data inputs ; 5272                        ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 504                         ;
+;         3 data inputs ; 1745                        ;
+;         4 data inputs ; 5269                        ;
 ; cycloneiii_mac_mult   ; 1                           ;
 ; cycloneiii_mac_out    ; 1                           ;
 ; cycloneiii_ram_block  ; 162                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 140.90                      ;
-; Average LUT depth     ; 83.49                       ;
+; Average LUT depth     ; 83.38                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1736,7 +1746,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:18     ;
+; Top            ; 00:00:17     ;
 +----------------+--------------+
 
 
@@ -1746,7 +1756,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Oct 10 23:42:37 2020
+    Info: Processing started: Sun Oct 11 12:48:49 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MBCORE -c MBCORE
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -1837,7 +1847,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file top_lev
 Info (12021): Found 1 design units, including 1 entities, in source file maquinaestadosuart.v
     Info (12023): Found entity 1: maquinaEstadosUART File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/maquinaEstadosUART.v Line: 1
 Info (12127): Elaborating entity "top_level_arch" for the top level hierarchy
-Info (12128): Elaborating entity "UARTModule" for hierarchy "UARTModule:Module_A" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/top_level_arch.v Line: 42
+Info (12128): Elaborating entity "UARTModule" for hierarchy "UARTModule:Module_A" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/top_level_arch.v Line: 44
 Info (12128): Elaborating entity "UARTController" for hierarchy "UARTModule:Module_A|UARTController:controller" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/uart/UARTModule.v Line: 34
 Warning (10230): Verilog HDL assignment warning at UARTController.v(123): truncated value with size 32 to match size of target (7) File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/uart/UARTController.v Line: 123
 Warning (10230): Verilog HDL assignment warning at UARTController.v(138): truncated value with size 32 to match size of target (7) File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/uart/UARTController.v Line: 138
@@ -1847,24 +1857,25 @@ Warning (10230): Verilog HDL assignment warning at UARTController.v(206): trunca
 Warning (10230): Verilog HDL assignment warning at UARTController.v(222): truncated value with size 32 to match size of target (7) File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/uart/UARTController.v Line: 222
 Info (12128): Elaborating entity "UARTClockGenerator" for hierarchy "UARTModule:Module_A|UARTClockGenerator:clock_gen" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/uart/UARTModule.v Line: 42
 Info (12128): Elaborating entity "RXSampler" for hierarchy "UARTModule:Module_A|RXSampler:sampler" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/uart/UARTModule.v Line: 49
-Info (12128): Elaborating entity "core" for hierarchy "core:core_a" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/top_level_arch.v Line: 54
-Info (12128): Elaborating entity "Temporizador" for hierarchy "core:core_a|Temporizador:temp" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 90
-Info (12128): Elaborating entity "INTERRUPTION_MODULE" for hierarchy "core:core_a|INTERRUPTION_MODULE:int_module" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 103
-Info (12128): Elaborating entity "PROCESS_KEEPER" for hierarchy "core:core_a|PROCESS_KEEPER:keeper" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 109
-Info (12128): Elaborating entity "PROCESS_DECODE" for hierarchy "core:core_a|PROCESS_DECODE:pdecoder" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 112
-Info (12128): Elaborating entity "ADDRESS_SET" for hierarchy "core:core_a|ADDRESS_SET:address_set" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 119
-Info (12128): Elaborating entity "pc" for hierarchy "core:core_a|pc:PC" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 134
-Info (12128): Elaborating entity "HD" for hierarchy "core:core_a|HD:hd" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 142
-Info (12128): Elaborating entity "BIOS" for hierarchy "core:core_a|BIOS:bios" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 147
+Info (12128): Elaborating entity "core" for hierarchy "core:core_a" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/top_level_arch.v Line: 57
+Info (12128): Elaborating entity "Temporizador" for hierarchy "core:core_a|Temporizador:temp" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 91
+Info (12128): Elaborating entity "maquinaEstadosUART" for hierarchy "core:core_a|maquinaEstadosUART:estados" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 100
+Info (12128): Elaborating entity "INTERRUPTION_MODULE" for hierarchy "core:core_a|INTERRUPTION_MODULE:int_module" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 105
+Info (12128): Elaborating entity "PROCESS_KEEPER" for hierarchy "core:core_a|PROCESS_KEEPER:keeper" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 111
+Info (12128): Elaborating entity "PROCESS_DECODE" for hierarchy "core:core_a|PROCESS_DECODE:pdecoder" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 114
+Info (12128): Elaborating entity "ADDRESS_SET" for hierarchy "core:core_a|ADDRESS_SET:address_set" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 121
+Info (12128): Elaborating entity "pc" for hierarchy "core:core_a|pc:PC" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 136
+Info (12128): Elaborating entity "HD" for hierarchy "core:core_a|HD:hd" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 144
+Info (12128): Elaborating entity "BIOS" for hierarchy "core:core_a|BIOS:bios" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 149
 Warning (10030): Net "bios.data_a" at BIOS.v(7) has no driver or initial value, using a default initial value '0' File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/BIOS.v Line: 7
 Warning (10030): Net "bios.waddr_a" at BIOS.v(7) has no driver or initial value, using a default initial value '0' File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/BIOS.v Line: 7
 Warning (10030): Net "bios.we_a" at BIOS.v(7) has no driver or initial value, using a default initial value '0' File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/BIOS.v Line: 7
-Info (12128): Elaborating entity "InstructionMem" for hierarchy "core:core_a|InstructionMem:instmem" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 159
-Info (12128): Elaborating entity "MUX_BIOS" for hierarchy "core:core_a|MUX_BIOS:mux_bios" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 167
-Info (12128): Elaborating entity "controlUnit" for hierarchy "core:core_a|controlUnit:control" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 197
+Info (12128): Elaborating entity "InstructionMem" for hierarchy "core:core_a|InstructionMem:instmem" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 161
+Info (12128): Elaborating entity "MUX_BIOS" for hierarchy "core:core_a|MUX_BIOS:mux_bios" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 169
+Info (12128): Elaborating entity "controlUnit" for hierarchy "core:core_a|controlUnit:control" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 200
 Warning (10240): Verilog HDL Always Construct warning at controlUnit.v(41): inferring latch(es) for variable "memRead", which holds its previous value in one or more paths through the always construct File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/controlUnit.v Line: 41
 Info (10041): Inferred latch for "memRead" at controlUnit.v(41) File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/controlUnit.v Line: 41
-Info (12128): Elaborating entity "MUX_INPUT" for hierarchy "core:core_a|MUX_INPUT:input_mux" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 205
+Info (12128): Elaborating entity "MUX_INPUT" for hierarchy "core:core_a|MUX_INPUT:input_mux" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 208
 Warning (10240): Verilog HDL Always Construct warning at MUX_INPUT.v(9): inferring latch(es) for variable "saida", which holds its previous value in one or more paths through the always construct File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/MUX_INPUT.v Line: 9
 Info (10041): Inferred latch for "saida[0]" at MUX_INPUT.v(15) File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/MUX_INPUT.v Line: 15
 Info (10041): Inferred latch for "saida[1]" at MUX_INPUT.v(15) File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/MUX_INPUT.v Line: 15
@@ -1898,20 +1909,20 @@ Info (10041): Inferred latch for "saida[28]" at MUX_INPUT.v(15) File: D:/maira/D
 Info (10041): Inferred latch for "saida[29]" at MUX_INPUT.v(15) File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/MUX_INPUT.v Line: 15
 Info (10041): Inferred latch for "saida[30]" at MUX_INPUT.v(15) File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/MUX_INPUT.v Line: 15
 Info (10041): Inferred latch for "saida[31]" at MUX_INPUT.v(15) File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/MUX_INPUT.v Line: 15
-Info (12128): Elaborating entity "SE_16_32" for hierarchy "core:core_a|SE_16_32:extender_16_32" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 209
-Info (12128): Elaborating entity "MUX_REGDEST" for hierarchy "core:core_a|MUX_REGDEST:mux_regdest" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 214
-Info (12128): Elaborating entity "MUX_HD" for hierarchy "core:core_a|MUX_HD:mux_hd" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 219
-Info (12128): Elaborating entity "BancoREG" for hierarchy "core:core_a|BancoREG:breg" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 237
-Info (12128): Elaborating entity "SE_26_32" for hierarchy "core:core_a|SE_26_32:estensor_26_32" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 241
-Info (12128): Elaborating entity "MUX_ALU" for hierarchy "core:core_a|MUX_ALU:mux_alu" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 246
-Info (12128): Elaborating entity "alu" for hierarchy "core:core_a|alu:ula" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 254
-Info (12128): Elaborating entity "MEM_SHIFTER" for hierarchy "core:core_a|MEM_SHIFTER:mem_shifter" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 258
-Info (12128): Elaborating entity "DataMem" for hierarchy "core:core_a|DataMem:dmem" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 271
-Info (12128): Elaborating entity "MUX_MEM" for hierarchy "core:core_a|MUX_MEM:mem_mux" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 287
-Info (12128): Elaborating entity "ADDER" for hierarchy "core:core_a|ADDER:adder" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 291
-Info (12128): Elaborating entity "MUX_PRE_JUMP" for hierarchy "core:core_a|MUX_PRE_JUMP:pre_jump_mux" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 296
-Info (12128): Elaborating entity "MUX_JUMP" for hierarchy "core:core_a|MUX_JUMP:jump_mux" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 301
-Info (12128): Elaborating entity "MUX_JR" for hierarchy "core:core_a|MUX_JR:jr_mux" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 306
+Info (12128): Elaborating entity "SE_16_32" for hierarchy "core:core_a|SE_16_32:extender_16_32" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 212
+Info (12128): Elaborating entity "MUX_REGDEST" for hierarchy "core:core_a|MUX_REGDEST:mux_regdest" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 217
+Info (12128): Elaborating entity "MUX_HD" for hierarchy "core:core_a|MUX_HD:mux_hd" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 222
+Info (12128): Elaborating entity "BancoREG" for hierarchy "core:core_a|BancoREG:breg" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 240
+Info (12128): Elaborating entity "SE_26_32" for hierarchy "core:core_a|SE_26_32:estensor_26_32" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 244
+Info (12128): Elaborating entity "MUX_ALU" for hierarchy "core:core_a|MUX_ALU:mux_alu" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 249
+Info (12128): Elaborating entity "alu" for hierarchy "core:core_a|alu:ula" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 257
+Info (12128): Elaborating entity "MEM_SHIFTER" for hierarchy "core:core_a|MEM_SHIFTER:mem_shifter" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 261
+Info (12128): Elaborating entity "DataMem" for hierarchy "core:core_a|DataMem:dmem" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 274
+Info (12128): Elaborating entity "MUX_MEM" for hierarchy "core:core_a|MUX_MEM:mem_mux" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 290
+Info (12128): Elaborating entity "ADDER" for hierarchy "core:core_a|ADDER:adder" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 294
+Info (12128): Elaborating entity "MUX_PRE_JUMP" for hierarchy "core:core_a|MUX_PRE_JUMP:pre_jump_mux" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 299
+Info (12128): Elaborating entity "MUX_JUMP" for hierarchy "core:core_a|MUX_JUMP:jump_mux" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 304
+Info (12128): Elaborating entity "MUX_JR" for hierarchy "core:core_a|MUX_JR:jr_mux" File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/core.v Line: 309
 Warning (12030): Port "counter_out" on the entity instantiation of "sampler" is connected to a signal of width 4. The formal width of the signal in the module is 8.  The extra bits will be left dangling without any fan-out logic. File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/uart/UARTModule.v Line: 49
 Warning (276027): Inferred dual-clock RAM node "core:core_a|InstructionMem:instmem|ROM_PROC_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "core:core_a|InstructionMem:instmem|ROM_OS_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
@@ -2054,6 +2065,8 @@ Info (12133): Instantiated megafunction "core:core_a|BIOS:bios|altsyncram:bios_r
     Info (12134): Parameter "INIT_FILE" = "db/MBCORE.ram0_BIOS_23f85c.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ub61.tdf
     Info (12023): Found entity 1: altsyncram_ub61 File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/db/altsyncram_ub61.tdf Line: 27
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/db/MBCORE.ram0_BIOS_23f85c.hdl.mif" contains "don't care" values -- overwriting them with 0s File: d:/maira/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/db/MBCORE.ram0_BIOS_23f85c.hdl.mif" contains "don't care" values -- overwriting them with 0s File: d:/maira/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12130): Elaborated megafunction instantiation "UARTModule:Module_A|UARTController:controller|altsyncram:buffer_rtl_0"
 Info (12133): Instantiated megafunction "UARTModule:Module_A|UARTController:controller|altsyncram:buffer_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -2154,7 +2167,7 @@ Info (12133): Instantiated megafunction "UARTModule:Module_A|UARTClockGenerator:
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_gkm.tdf
     Info (12023): Found entity 1: lpm_divide_gkm File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/db/lpm_divide_gkm.tdf Line: 24
-Warning (12241): 13 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 12 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13012): Latch core:core_a|MUX_INPUT:input_mux|saida[15] has unsafe behavior File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/MUX_INPUT.v Line: 15
     Warning (13013): Ports D and ENA on the latch are fed by the same signal core:core_a|MUX_BIOS:mux_bios|state File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/MUX_BIOS.v Line: 8
 Warning (13012): Latch core:core_a|MUX_INPUT:input_mux|saida[14] has unsafe behavior File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/MUX_INPUT.v Line: 15
@@ -2215,17 +2228,17 @@ Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/output_files/MBCORE.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 14378 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 14386 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 55 input pins
-    Info (21059): Implemented 160 output pins
-    Info (21061): Implemented 13999 logic cells
+    Info (21059): Implemented 167 output pins
+    Info (21061): Implemented 14000 logic cells
     Info (21064): Implemented 162 RAM segments
     Info (21062): Implemented 2 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 72 warnings
-    Info: Peak virtual memory: 4924 megabytes
-    Info: Processing ended: Sat Oct 10 23:43:08 2020
-    Info: Elapsed time: 00:00:31
-    Info: Total CPU time (on all processors): 00:00:40
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 74 warnings
+    Info: Peak virtual memory: 4922 megabytes
+    Info: Processing ended: Sun Oct 11 12:49:18 2020
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:38
 
 
 +------------------------------------------+
