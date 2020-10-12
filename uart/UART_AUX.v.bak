@@ -1,0 +1,13 @@
+module UART_AUX (
+	input [7:0] super_aux,
+	input aux_signal,
+	output [7:0] super_aux_saida
+);
+
+	always @(*)
+		if(aux_signal == 1'b1)
+			super_aux_saida = super_aux;
+		else
+			super_aux_saida = 8'b0;	
+
+endmodule

@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "10/11/2020 12:46:23"
+// Generated on "10/11/2020 20:50:59"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          top_level_arch
 // 
@@ -37,6 +37,8 @@ reg reset;
 reg [15:0] switches;
 reg [31:0] write_value_B;
 // wires                                               
+wire aux_signalA;
+wire aux_signalB;
 wire clock_A;
 wire [31:0] display;
 wire [2:0] instruction_A;
@@ -49,6 +51,10 @@ wire rxB_to_txA_out;
 wire [3:0] sample_count_A;
 wire [3:0] sample_count_B;
 wire stateA;
+wire [7:0] super_auxA;
+wire [7:0] super_auxB;
+wire [7:0] super_aux_saidaA;
+wire [7:0] super_aux_saidaB;
 wire uart_clock_A;
 wire uart_clock_B;
 wire [7:0] wb_data_A;
@@ -60,6 +66,8 @@ wire [31:0] write_value_A;
 // assign statements (if any)                          
 top_level_arch i1 (
 // port map - connection between master ports and signals/registers   
+	.aux_signalA(aux_signalA),
+	.aux_signalB(aux_signalB),
 	.clock_A(clock_A),
 	.clock_B(clock_B),
 	.display(display),
@@ -77,6 +85,10 @@ top_level_arch i1 (
 	.sample_count_A(sample_count_A),
 	.sample_count_B(sample_count_B),
 	.stateA(stateA),
+	.super_auxA(super_auxA),
+	.super_auxB(super_auxB),
+	.super_aux_saidaA(super_aux_saidaA),
+	.super_aux_saidaB(super_aux_saidaB),
 	.switches(switches),
 	.uart_clock_A(uart_clock_A),
 	.uart_clock_B(uart_clock_B),

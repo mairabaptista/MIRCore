@@ -12,7 +12,11 @@ module UARTController (
 	output reg [7:0] wb_data,
 	
 	// TEST PURPOSES
-	output [1:0] read_state_out
+	output [1:0] read_state_out,
+	output reg [7:0] write_aux,
+	output reg [7:0] super_aux,
+	output reg aux_signal
+	//output reg [6:0] read_aux
 	/*output reg [1:0] write_state,
 	output reg [2:0] amount_read,
 	output reg [2:0] amount_write,
@@ -56,6 +60,7 @@ initial begin
 	amount_read = 3'b000;
 	buffer_size = 7'b0000000;
 	tx = 1;
+	aux_signal = 0;
 
 	for (i = 0; i < 128; i = i +1) begin
 		buffer[i] = 8'b00000000;
@@ -70,13 +75,13 @@ always@(posedge physical_clock) begin
 		case(instruction)
 			(3'b001): begin
 				wb_flag = 1;
-				wb_data[7:0] = buffer_read[6:0] != buffer_size[6:0];
+				wb_data[7:0] <= buffer_read[6:0] != buffer_size[6:0];
 			end
 
 			// Read value
 			(3'b010): begin
 				wb_flag = 1;
-				wb_data[7:0] = buffer[buffer_read[6:0]][7:0];
+				wb_data[7:0] <= buffer[buffer_read[6:0]][7:0];
 				//wb_data[7:0] = 10;
 			end
 			
@@ -84,6 +89,8 @@ always@(posedge physical_clock) begin
 			(3'b011): begin
 				wb_flag = 0;
 				wb_data[7:0] = 0;
+				write_aux[7:0] <= write_value[7:0];
+				//super_aux <= write_value[7:0];
 			end
 
 			// DEBUG1 buffer_read
@@ -109,7 +116,7 @@ always@(posedge physical_clock) begin
 	end
 end
 
-always@(negedge clock) begin
+always@(posedge clock) begin //era negedge clock
 
 	if (!init_flag) begin
 		write_buffer_write = 0;
@@ -119,8 +126,11 @@ always@(negedge clock) begin
 		case(instruction)
 			// Write value
 			(3'b011): begin
-				write_buffer[write_buffer_write[6:0]][7:0] = write_value[7:0];
-				write_buffer_write[6:0] = write_buffer_write[6:0] + 1;
+				write_buffer[write_buffer_write[6:0]][7:0] <= write_value[7:0];
+				//super_aux = write_buffer[write_buffer_write[6:0]];
+				super_aux <= write_value[7:0];
+				write_buffer_write[6:0] <= write_buffer_write[6:0] + 1;
+				
 			end
 		endcase
 	end
@@ -165,12 +175,15 @@ always@(posedge uart_clock) begin
 		end
 		
 		(WRITING): begin
+			//write_aux = write_buffer[write_buffer_size];
 			tx = write_buffer[write_buffer_size][amount_write];
+			//super_aux[amount_write] = write_buffer[write_buffer_size][amount_write]; //add
 			write_parity = write_parity + tx;
 			amount_write = amount_write + 1;
 			
 			if (amount_write >= 8) begin
 				write_state = PARITY;
+				aux_signal = 1'b1;
 			end
 			else begin
 				write_state = WRITING;
@@ -202,11 +215,14 @@ always@(posedge uart_clock) begin
 		(READING): begin
 			read_parity = read_parity + rx;
 			buffer[buffer_size][amount_read] = rx;
+			//super_aux[amount_write] = rx;
+			//read_aux[buffer_size] = buffer[buffer_size];
 			//test_buffer[amount_read] = rx;
 			amount_read = amount_read + 1;
 			
 			if (amount_read >= 8) begin
 				read_state = PARITY;
+				//aux_signal = 1'b1;
 			end
 		end
 		

@@ -584,6 +584,142 @@
 					"strict" : false
 				},
 				{
+					"name" : "super_auxA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "super_auxA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "super_auxA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "super_auxA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "super_auxA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "super_auxA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "super_auxA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "super_auxA[7]",
+					"strict" : false
+				},
+				{
+					"name" : "super_auxB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "super_auxB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "super_auxB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "super_auxB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "super_auxB[4]",
+					"strict" : false
+				},
+				{
+					"name" : "super_auxB[5]",
+					"strict" : false
+				},
+				{
+					"name" : "super_auxB[6]",
+					"strict" : false
+				},
+				{
+					"name" : "super_auxB[7]",
+					"strict" : false
+				},
+				{
+					"name" : "super_aux_saidaA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "super_aux_saidaA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "super_aux_saidaA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "super_aux_saidaA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "super_aux_saidaA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "super_aux_saidaA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "super_aux_saidaA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "super_aux_saidaA[7]",
+					"strict" : false
+				},
+				{
+					"name" : "super_aux_saidaB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "super_aux_saidaB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "super_aux_saidaB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "super_aux_saidaB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "super_aux_saidaB[4]",
+					"strict" : false
+				},
+				{
+					"name" : "super_aux_saidaB[5]",
+					"strict" : false
+				},
+				{
+					"name" : "super_aux_saidaB[6]",
+					"strict" : false
+				},
+				{
+					"name" : "super_aux_saidaB[7]",
+					"strict" : false
+				},
+				{
+					"name" : "aux_signalA",
+					"strict" : false
+				},
+				{
+					"name" : "aux_signalB",
+					"strict" : false
+				},
+				{
 					"name" : "physical_clock",
 					"strict" : false
 				},

@@ -1,3 +1,5 @@
+Warning (10268): Verilog HDL information at UARTController.v(73): always construct contains both blocking and non-blocking assignments File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/uart/UARTController.v Line: 73
+Warning (10268): Verilog HDL information at UARTController.v(119): always construct contains both blocking and non-blocking assignments File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/uart/UARTController.v Line: 119
 Info (10281): Verilog HDL Declaration information at output_module.v(4): object "dunidade" differs only in case from object "dUnidade" in the same scope File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/output_module.v Line: 4
 Info (10281): Verilog HDL Declaration information at output_module.v(4): object "ddezena" differs only in case from object "dDezena" in the same scope File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/output_module.v Line: 4
 Info (10281): Verilog HDL Declaration information at output_module.v(4): object "dcentena" differs only in case from object "dCentena" in the same scope File: D:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/output_module.v Line: 4

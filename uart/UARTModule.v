@@ -12,7 +12,12 @@ module UARTModule (
 	// para testes
 	output custom_uart_clock_out,
 	output [1:0] read_state_out,
-	output [3:0] sample_count
+	output [3:0] sample_count,
+	output [7:0] super_aux,
+	output aux_signal,
+	output [7:0] super_aux_saida
+	//output ready_to_send,
+	//input ready_to_receive
 	
 );
 
@@ -27,10 +32,14 @@ UARTController controller(.clock(clock),
 									.instruction(instruction),
 									.write_value(write_value[7:0]),
 									.rx(sampled_rx),
+									//.ready_to_receive(ready_to_receive),
 									.tx(tx),
+									//.ready_to_send(ready_to_send),
 									.wb_flag(wb_flag),
 									.wb_data(wb_data),
-									.read_state_out(read_state_out) 
+									.read_state_out(read_state_out),
+									.super_aux(super_aux),
+									.aux_signal(aux_signal)
 									);
 									
 UARTClockGenerator clock_gen(	.physical_clock(physical_clock),
@@ -47,6 +56,10 @@ RXSampler sampler( .sampling_clock(sampling_clock),
 						 .sampled_rx(sampled_rx),
 						 .counter_out(sample_count)
 						 );
+						 
+UART_AUX uart_aux(.super_aux(super_aux),
+						.aux_signal(aux_signal),
+						.super_aux_saida(super_aux_saida));
 
 
 endmodule

@@ -8,108 +8,66 @@ z2
 !i10f 100
 cModel Technology
 Z0 dD:/maira/Documents/LAB REDES/TRABSON/mir2/mirCore/simulation/qsim
-vcore
-Z1 !s110 1602379168
+vhard_block
+Z1 !s110 1602464687
 !i10b 1
-!s100 PeI73f7>a]SOV<HOaBSPo2
-IXZ]O1AUL2j`EWQc=Y3=Az2
+!s100 ^oZf@9<7ea=lHB3P]aGmS0
+IN];[T:Ek>m2NG^:Njl;<c0
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1602379167
-Z3 8MBCORE.vo
-Z4 FMBCORE.vo
-Z5 L0 31
+Z3 w1602464684
+Z4 8MBCORE.vo
+Z5 FMBCORE.vo
+L0 324506
 Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1602379167.000000
-Z7 !s107 MBCORE.vo|
-Z8 !s90 -work|work|MBCORE.vo|
+Z7 !s108 1602464685.000000
+Z8 !s107 MBCORE.vo|
+Z9 !s90 -work|work|MBCORE.vo|
 !i113 1
-Z9 o-work work
-Z10 tCvgOpt 0
-vcore_vlg_vec_tst
+Z10 o-work work
+Z11 tCvgOpt 0
+vtop_level_arch
 R1
 !i10b 1
-!s100 S]SV6Ab>3[<?[JSEh70z@0
-IUiTVnSII`15P7Y0mURekO2
+!s100 <2PiK9FKoj62n^fC[lC4@0
+ILLL4Q?L[cdINckJ:YmKc>3
 R2
 R0
-w1602379164
-8Waveform3.vwf.vt
-FWaveform3.vwf.vt
-Z11 L0 29
-R6
-r1
-!s85 0
-31
-!s108 1602379168.000000
-!s107 Waveform3.vwf.vt|
-!s90 -work|work|Waveform3.vwf.vt|
-!i113 1
-R9
-R10
-vhard_block
-Z12 !s110 1602431680
-!i10b 1
-!s100 QgLccNVP7`;_glVRALDhC1
-IY3]0Ge4?SiHILdjif>iOD2
-R2
-R0
-Z13 w1602431678
-R3
-R4
-L0 323141
-R6
-r1
-!s85 0
-31
-Z14 !s108 1602431679.000000
-R7
-R8
-!i113 1
-R9
-R10
-vtop_level_arch
-R12
-!i10b 1
-!s100 17U0Z<dkgKPL0ITVjMNhO2
-IT@[Oj9IJ1fd2lPCL1k<o31
-R2
-R0
-R13
 R3
 R4
 R5
+L0 31
 R6
 r1
 !s85 0
 31
-R14
 R7
 R8
-!i113 1
 R9
+!i113 1
 R10
+R11
 vtop_level_arch_vlg_vec_tst
-!s110 1602431681
+R1
 !i10b 1
-!s100 NfKXkM;RhTC_BB@H3d`ZV3
-Ij68@1fI7=;a5e_]OGaGAB0
+!s100 6aUDIbJ;PP@To01E0?InA0
+IhS1B;diCTkJ;BiS2;fjH70
 R2
 R0
-w1602431675
-8Waveform4.vwf.vt
-FWaveform4.vwf.vt
-R11
+w1602464681
+8Waveform8.vwf.vt
+FWaveform8.vwf.vt
+L0 29
 R6
 r1
 !s85 0
 31
-!s108 1602431680.000000
-!s107 Waveform4.vwf.vt|
-!s90 -work|work|Waveform4.vwf.vt|
+!s108 1602464687.000000
+!s107 Waveform8.vwf.vt|
+!s90 -work|work|Waveform8.vwf.vt|
 !i113 1
-R9
 R10
+R11

@@ -1,0 +1,420 @@
+// Copyright (C) 2017  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "10/11/2020 22:04:40"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          top_level_arch
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module top_level_arch_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clock_B;
+reg init_flag;
+reg [2:0] instruction_B;
+reg physical_clock;
+reg reset;
+reg [15:0] switches;
+reg [31:0] write_value_B;
+// wires                                               
+wire aux_signalA;
+wire aux_signalB;
+wire clock_A;
+wire [31:0] display;
+wire [2:0] instruction_A;
+wire [31:0] outPC;
+wire [31:0] rdata2;
+wire [1:0] read_state_A;
+wire [1:0] read_state_B;
+wire rxA_to_txB_out;
+wire rxB_to_txA_out;
+wire [3:0] sample_count_A;
+wire [3:0] sample_count_B;
+wire stateA;
+wire [7:0] super_auxA;
+wire [7:0] super_auxB;
+wire [7:0] super_aux_saidaA;
+wire [7:0] super_aux_saidaB;
+wire uart_clock_A;
+wire uart_clock_B;
+wire [7:0] wb_data_A;
+wire [7:0] wb_data_B;
+wire wb_flag_A;
+wire wb_flag_B;
+wire [31:0] write_value_A;
+
+// assign statements (if any)                          
+top_level_arch i1 (
+// port map - connection between master ports and signals/registers   
+	.aux_signalA(aux_signalA),
+	.aux_signalB(aux_signalB),
+	.clock_A(clock_A),
+	.clock_B(clock_B),
+	.display(display),
+	.init_flag(init_flag),
+	.instruction_A(instruction_A),
+	.instruction_B(instruction_B),
+	.outPC(outPC),
+	.physical_clock(physical_clock),
+	.rdata2(rdata2),
+	.read_state_A(read_state_A),
+	.read_state_B(read_state_B),
+	.reset(reset),
+	.rxA_to_txB_out(rxA_to_txB_out),
+	.rxB_to_txA_out(rxB_to_txA_out),
+	.sample_count_A(sample_count_A),
+	.sample_count_B(sample_count_B),
+	.stateA(stateA),
+	.super_auxA(super_auxA),
+	.super_auxB(super_auxB),
+	.super_aux_saidaA(super_aux_saidaA),
+	.super_aux_saidaB(super_aux_saidaB),
+	.switches(switches),
+	.uart_clock_A(uart_clock_A),
+	.uart_clock_B(uart_clock_B),
+	.wb_data_A(wb_data_A),
+	.wb_data_B(wb_data_B),
+	.wb_flag_A(wb_flag_A),
+	.wb_flag_B(wb_flag_B),
+	.write_value_A(write_value_A),
+	.write_value_B(write_value_B)
+);
+initial 
+begin 
+#3000000 $finish;
+end 
+
+// reset
+initial
+begin
+	reset = 1'b0;
+end 
+// switches[ 15 ]
+initial
+begin
+	switches[15] = 1'b0;
+end 
+// switches[ 14 ]
+initial
+begin
+	switches[14] = 1'b0;
+end 
+// switches[ 13 ]
+initial
+begin
+	switches[13] = 1'b0;
+end 
+// switches[ 12 ]
+initial
+begin
+	switches[12] = 1'b0;
+end 
+// switches[ 11 ]
+initial
+begin
+	switches[11] = 1'b0;
+end 
+// switches[ 10 ]
+initial
+begin
+	switches[10] = 1'b0;
+end 
+// switches[ 9 ]
+initial
+begin
+	switches[9] = 1'b0;
+end 
+// switches[ 8 ]
+initial
+begin
+	switches[8] = 1'b0;
+end 
+// switches[ 7 ]
+initial
+begin
+	switches[7] = 1'b0;
+end 
+// switches[ 6 ]
+initial
+begin
+	switches[6] = 1'b0;
+end 
+// switches[ 5 ]
+initial
+begin
+	switches[5] = 1'b0;
+end 
+// switches[ 4 ]
+initial
+begin
+	switches[4] = 1'b0;
+end 
+// switches[ 3 ]
+initial
+begin
+	switches[3] = 1'b0;
+end 
+// switches[ 2 ]
+initial
+begin
+	switches[2] = 1'b0;
+end 
+// switches[ 1 ]
+initial
+begin
+	switches[1] = 1'b0;
+end 
+// switches[ 0 ]
+initial
+begin
+	switches[0] = 1'b0;
+end 
+
+// clock_B
+always
+begin
+	clock_B = 1'b0;
+	clock_B = #5000 1'b1;
+	#5000;
+end 
+
+// physical_clock
+always
+begin
+	physical_clock = 1'b0;
+	physical_clock = #500 1'b1;
+	#500;
+end 
+
+// init_flag
+initial
+begin
+	init_flag = 1'b1;
+	init_flag = #20000 1'b0;
+	init_flag = #120000 1'b1;
+end 
+// instruction_B[ 2 ]
+initial
+begin
+	instruction_B[2] = 1'b0;
+	instruction_B[2] = #160000 1'b1;
+	instruction_B[2] = #80000 1'b0;
+end 
+// instruction_B[ 1 ]
+initial
+begin
+	instruction_B[1] = 1'b0;
+	instruction_B[1] = #400000 1'b1;
+	instruction_B[1] = #160000 1'b0;
+	instruction_B[1] = #1120000 1'b1;
+	instruction_B[1] = #160000 1'b0;
+end 
+// instruction_B[ 0 ]
+initial
+begin
+	instruction_B[0] = 1'b0;
+	instruction_B[0] = #400000 1'b1;
+	instruction_B[0] = #160000 1'b0;
+end 
+// write_value_B[ 31 ]
+initial
+begin
+	write_value_B[31] = 1'b0;
+end 
+// write_value_B[ 30 ]
+initial
+begin
+	write_value_B[30] = 1'b0;
+end 
+// write_value_B[ 29 ]
+initial
+begin
+	write_value_B[29] = 1'b0;
+end 
+// write_value_B[ 28 ]
+initial
+begin
+	write_value_B[28] = 1'b0;
+end 
+// write_value_B[ 27 ]
+initial
+begin
+	write_value_B[27] = 1'b0;
+end 
+// write_value_B[ 26 ]
+initial
+begin
+	write_value_B[26] = 1'b0;
+end 
+// write_value_B[ 25 ]
+initial
+begin
+	write_value_B[25] = 1'b0;
+end 
+// write_value_B[ 24 ]
+initial
+begin
+	write_value_B[24] = 1'b0;
+end 
+// write_value_B[ 23 ]
+initial
+begin
+	write_value_B[23] = 1'b0;
+end 
+// write_value_B[ 22 ]
+initial
+begin
+	write_value_B[22] = 1'b0;
+end 
+// write_value_B[ 21 ]
+initial
+begin
+	write_value_B[21] = 1'b0;
+end 
+// write_value_B[ 20 ]
+initial
+begin
+	write_value_B[20] = 1'b0;
+end 
+// write_value_B[ 19 ]
+initial
+begin
+	write_value_B[19] = 1'b0;
+end 
+// write_value_B[ 18 ]
+initial
+begin
+	write_value_B[18] = 1'b0;
+end 
+// write_value_B[ 17 ]
+initial
+begin
+	write_value_B[17] = 1'b0;
+	write_value_B[17] = #160000 1'b1;
+	write_value_B[17] = #80000 1'b0;
+end 
+// write_value_B[ 16 ]
+initial
+begin
+	write_value_B[16] = 1'b0;
+	write_value_B[16] = #160000 1'b1;
+	write_value_B[16] = #80000 1'b0;
+end 
+// write_value_B[ 15 ]
+initial
+begin
+	write_value_B[15] = 1'b0;
+	write_value_B[15] = #160000 1'b1;
+	write_value_B[15] = #80000 1'b0;
+end 
+// write_value_B[ 14 ]
+initial
+begin
+	write_value_B[14] = 1'b0;
+	write_value_B[14] = #160000 1'b1;
+	write_value_B[14] = #80000 1'b0;
+end 
+// write_value_B[ 13 ]
+initial
+begin
+	write_value_B[13] = 1'b0;
+end 
+// write_value_B[ 12 ]
+initial
+begin
+	write_value_B[12] = 1'b0;
+	write_value_B[12] = #160000 1'b1;
+	write_value_B[12] = #80000 1'b0;
+end 
+// write_value_B[ 11 ]
+initial
+begin
+	write_value_B[11] = 1'b0;
+end 
+// write_value_B[ 10 ]
+initial
+begin
+	write_value_B[10] = 1'b0;
+end 
+// write_value_B[ 9 ]
+initial
+begin
+	write_value_B[9] = 1'b0;
+end 
+// write_value_B[ 8 ]
+initial
+begin
+	write_value_B[8] = 1'b0;
+end 
+// write_value_B[ 7 ]
+initial
+begin
+	write_value_B[7] = 1'b0;
+	write_value_B[7] = #160000 1'b1;
+	write_value_B[7] = #80000 1'b0;
+end 
+// write_value_B[ 6 ]
+initial
+begin
+	write_value_B[6] = 1'b0;
+	write_value_B[6] = #400000 1'b1;
+	write_value_B[6] = #160000 1'b0;
+end 
+// write_value_B[ 5 ]
+initial
+begin
+	write_value_B[5] = 1'b0;
+end 
+// write_value_B[ 4 ]
+initial
+begin
+	write_value_B[4] = 1'b0;
+	write_value_B[4] = #160000 1'b1;
+	write_value_B[4] = #80000 1'b0;
+	write_value_B[4] = #160000 1'b1;
+	write_value_B[4] = #160000 1'b0;
+end 
+// write_value_B[ 3 ]
+initial
+begin
+	write_value_B[3] = 1'b0;
+	write_value_B[3] = #400000 1'b1;
+	write_value_B[3] = #160000 1'b0;
+end 
+// write_value_B[ 2 ]
+initial
+begin
+	write_value_B[2] = 1'b0;
+end 
+// write_value_B[ 1 ]
+initial
+begin
+	write_value_B[1] = 1'b0;
+end 
+// write_value_B[ 0 ]
+initial
+begin
+	write_value_B[0] = 1'b0;
+end 
+endmodule
+

@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sun Oct 11 12:49:18 2020
+Analysis & Synthesis Status : Successful - Sun Oct 11 21:41:13 2020
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : MBCORE
 Top-level Entity Name : top_level_arch
 Family : Cyclone IV E
-Total logic elements : 13,853
-    Total combinational functions : 9,787
-    Dedicated logic registers : 4,632
-Total registers : 4632
-Total pins : 222
+Total logic elements : 13,885
+    Total combinational functions : 9,803
+    Dedicated logic registers : 4,650
+Total registers : 4650
+Total pins : 256
 Total virtual pins : 0
 Total memory bits : 462,912
 Embedded Multiplier 9-bit elements : 2

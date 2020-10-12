@@ -1,26 +1,26 @@
 # do MBCORE.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:54:39 on Oct 11,2020
+# Start time: 22:04:45 on Oct 11,2020
 # vlog -work work MBCORE.vo 
 # -- Compiling module top_level_arch
 # -- Compiling module hard_block
 # 
 # Top level modules:
 # 	top_level_arch
-# End time: 12:54:40 on Oct 11,2020, Elapsed time: 0:00:01
+# End time: 22:04:47 on Oct 11,2020, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:54:40 on Oct 11,2020
-# vlog -work work Waveform4.vwf.vt 
+# Start time: 22:04:47 on Oct 11,2020
+# vlog -work work Waveform8.vwf.vt 
 # -- Compiling module top_level_arch_vlg_vec_tst
 # 
 # Top level modules:
 # 	top_level_arch_vlg_vec_tst
-# End time: 12:54:41 on Oct 11,2020, Elapsed time: 0:00:01
+# End time: 22:04:47 on Oct 11,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.top_level_arch_vlg_vec_tst 
-# Start time: 12:54:41 on Oct 11,2020
+# Start time: 22:04:47 on Oct 11,2020
 # Loading work.top_level_arch_vlg_vec_tst
 # Loading work.top_level_arch
 # Loading work.hard_block
@@ -40,7 +40,7 @@
 # Loading cycloneive_ver.cycloneive_mac_mult_internal
 # Loading cycloneive_ver.cycloneive_mac_out
 # Loading altera_ver.PRIM_GDFF_LOW
-# ** Warning: Design size of 38580 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 36714 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#26
 # Simulation time: 0 ps
@@ -51,8 +51,16 @@
 # Simulation time: 0 ps
 # Simulation time: 0 ps
 # Simulation time: 0 ps
-# Simulation time: 820800 ps
-# ** Note: $finish    : Waveform4.vwf.vt(92)
-#    Time: 1 us  Iteration: 0  Instance: /top_level_arch_vlg_vec_tst
-# End time: 12:55:05 on Oct 11,2020, Elapsed time: 0:00:24
+# Simulation time: 1072501 ps
+# Simulation time: 1072501 ps
+# Simulation time: 1072501 ps
+# Simulation time: 1072501 ps
+# Simulation time: 1072501 ps
+# Simulation time: 1072501 ps
+# Simulation time: 1072501 ps
+# Simulation time: 1072501 ps
+# Simulation time: 2759000 ps
+# ** Note: $finish    : Waveform8.vwf.vt(104)
+#    Time: 3 us  Iteration: 0  Instance: /top_level_arch_vlg_vec_tst
+# End time: 22:05:32 on Oct 11,2020, Elapsed time: 0:00:45
 # Errors: 0, Warnings: 1
